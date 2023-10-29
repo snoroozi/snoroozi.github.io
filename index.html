@@ -1,0 +1,488 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Strata by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	 </head>	 
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner align-center">
+					<a href="#" class="image avatar"><img src="images/shahriar-photo-min.jpg" alt="" /></a>
+					<h1><strong>Shahriar Noroozizadeh</strong> <br>
+					ML+ISM PhD @ Carnegie Mellon Unviersity <br>
+						snoroozi [AT] cs.cmu.edu
+					</h1>
+					<br><br><br>
+					<nav id="navbar">
+						<ul>
+							<li><a href="#aboutme">About Me</a></li>
+							<li><a href="#research">Research</a></li>
+							<li><a href="#work-experience">Work Experience</a></li>
+							<li><a href="#past-projects">Past Projects</a></li>
+							<li><a href="#news-section">News </a></li>
+							<!-- Add more menu items as needed -->
+						</ul>
+					</nav>
+				</div>
+			</header>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- About Me -->
+					<section id="aboutme">
+						<header class="major">
+							<h2>Hi, I'm Shahriar 👋</h2>
+						</header>
+						<p>I am a joint Machine Learning and Public Policy Management Ph.D. student at the <a href="https://www.ml.cmu.edu/">Machine Learning Department of the School of Computer Science</a> and <a href="https://www.heinz.cmu.edu/">Heinz College of Information Systems and Public Policy</a> at Carnegie Mellon University. I am very fortunate to be advised by <a href="https://www.andrew.cmu.edu/user/georgech/">Prof. George Chen</a> (Heinz and MLD) and <a href="https://www.nlm.nih.gov/research/researchstaff/WeissJeremy.html">Prof. Jeremy Weiss</a> (National Library of Medicine at NIH). I also work with <a href="https://acmilab.org/people/zachary-lipton/">Prof. Zachary Lipton</a> as my MLD Mentor. 
+						<!-- <br><br> -->
+						</p>
+						<p style="margin: 0; padding: 0;"> <u><b>Research:</b></u></p>
+						<p style="margin: 0; padding: 0;">
+						My research focuses on interpretable representation learning for temporal data with application in healthcare. I am specifically interested in developing machine learning methodology uncovering temporal representations that enhance our understanding of the evolving health status of patients, shedding light on the underlying mechanisms over time. I am also interested in the intersection of machine learning and information systems management, and how we can develop and utilize machine learning tools for high-stake decision making scenarios such as those prominent in healthcare management.
+						</p>
+						<br>
+						<p style="margin: 0; padding: 0;"><u><b>Pre-historic:</b></u></p>
+						<p style="margin: 0; padding: 0;">
+						I earned two master's degrees from CMU, Master's of Science in <a href="https://www.cmu.edu/bme/">Biomedical Engineering</a> 
+						(<a href="https://drive.google.com/file/d/1iUfV4gimAnLFZUf9FgRXyzKLeEfHwaw9/view?usp=drive_link">Thesis in Neuromodulation</a>)
+						 in 2020 and Master's of Science in <a href="https://www.ml.cmu.edu/">Machine Learning</a> in 2022.
+						Prior to joining CMU, I graduated with high honours from the University of British with the Bachelor of Applied Science in <a href="https://engineering.ubc.ca/programs/undergraduate/engineering-physics">Engineering Physics</a> (with Electrical Engineering and Computer Science specialization) in 2018. At UBC I researched on Automated Pathology and worked on GPU Accelerated Photoacousitc Tomography at <a href="https://rcl.ece.ubc.ca/">the Robotics and Control Laboratory</a> under the supervision of <a href="https://ece.ubc.ca/tim-salcudean/">Prof. Tim Salcudean</a>.
+						 </p>
+						<!-- <ul class="actions">
+							<li><a href="#" class="button">Learn More</a></li>
+						</ul> -->
+					</section>
+
+				<!-- Current Research -->
+					<section id="research">
+						<h2>Recent Research and Publications</h2>
+						<div class="row">
+							<article class="col-6 col-12-xsmall work-item">
+								<!-- Visible content for users -->
+								<a href="#content-TSCL" class="image fit thumb mfp-inline">
+									<img src="images/TSCL-MIMIC.png" alt="Temporal-Supervised Contrastive Learning: Modeling Patient Risk Progression" />
+								</a>
+								<h3>Temporal-Supervised Contrastive Learning: Modeling Patient Risk Progression</h3>
+								<!-- Hidden content for Magnific Popup -->
+								<div id="content-TSCL" class="mfp-hide">
+									<img src="images/TSCL-MIMIC.png" alt="Temporal-Supervised Contrastive Learning: Modeling Patient Risk Progression" style="width: 50%;" /> 
+									<h3>Temporal-Supervised Contrastive Learning: Modeling Patient Risk Progression
+										<a href="https://r2hcai.github.io/AAAI-23/files/CameraReadys/46.pdf" target="_blank">[Paper]</a>
+									</h3>
+									<p><u><b>Abstract:</b></u> We consider the problem of predicting how the likelihood of an outcome of interest for a patient changes over time as we observe more of the patient’s data. To solve this problem, we propose a supervised contrastive learning framework that learns an embedding representation for each time step of a patient time series. Our framework learns the embedding space to have the following properties: (1) nearby points in the embedding space have similar predicted class probabilities, (2) adjacent time steps of the same time series map to nearby points in the embedding space, and (3) time steps with very different raw feature vectors map to far apart regions of the embedding space. To achieve property (3), we employ a nearest neighbor pairing mechanism in the raw feature space. This mechanism also serves as an alternative to “data augmentation”, a key ingredient of contrastive learning, which lacks a standard procedure that is adequately realistic for clinical tabular data, to our knowledge. We demonstrate that our approach outperforms state-of-the-art baselines in predicting mortality of septic patients (MIMIC-III dataset) and tracking progression of cognitive impairment (ADNI dataset). Our method also consistently recovers the correct synthetic dataset embedding structure across experiments, a feat not achieved by baselines. Our ablation experiments show the pivotal role of our nearest neighbor pairing.
+									</p>
+								</div>
+							</article>
+
+							<article class="col-6 col-12-xsmall work-item">
+								<!-- Visible content for users -->
+								<a href="#content-CMLH" class="image fit thumb mfp-inline">
+									<img src="images/CMLH.png" alt="Contrastive Learning Based Interpretable Hospital Discharge Delay Prediction" />
+								</a>
+								<h3>Contrastive Learning Based Interpretable Hospital Discharge Delay Prediction</h3>
+								<!-- Hidden content for Magnific Popup -->
+								<div id="content-CMLH" class="mfp-hide">
+									<img src="images/CMLH.png" alt="Contrastive Learning Based Interpretable Hospital Discharge Delay Prediction" style="width: 70%;" /> 
+									<h3>Contrastive Learning Based Interpretable Hospital Discharge Delay Prediction</h3>
+									<p><u><b>Abstract:</b></u> We addressed the significant challenge of delays in patient discharge across hospitals. Over an 11-month period, more than 63% of discharges at four UPMC hospitals were delayed, leading to costs of an estimated $6.6 million in the sampled hospital units. These delays adversely affect patient experience and health outcomes, exacerbated by issues like the lack of post-discharge patient transportation and ineffective capacity management in the health system. Throughout the CMLH fellowship, we aimed to mitigate these issues by developing a discharge delay prediction module. This initiative was divided into two phases: (1) Length of Stay Prediction: Various regression models were benchmarked using prehospital data. Predicting longer lengths of stays posed challenges, mainly due to their infrequent occurrence in the dataset. (2) Predictability Analysis: Building on initial insights, the prediction task was refined based on length of stay percentiles, identifying patients with more predictable stays versus those harder to forecast. A key innovation in this study was the application of a contrastive learning approach. This methodology significantly outperformed traditional models, including Random Forest, XGBoost, Support Vector Machines, Logistic Regression, and Fully-Connected Neural Networks. By leveraging the contrastive learning paradigm, the study offers a robust solution to predict patient discharge times, providing valuable guidance for hospital management and optimizing patient flow.</p>
+								</div>
+							</article>
+							
+							<article class="col-6 col-12-xsmall work-item">
+								<!-- Visible content for users -->
+								<a href="#content-ET-CLIP" class="image fit thumb mfp-inline">
+									<img src="images/et-clip.png" alt="Pre-trained CLIP Encoder for Embodied Instruction Following in ALFRED" />
+								</a>
+								<h3>Pre-trained CLIP Encoder for Embodied Instruction Following in ALFRED</h3>
+								<!-- Hidden content for Magnific Popup -->
+								<div id="content-ET-CLIP" class="mfp-hide">
+									<img src="images/et-clip.png" alt="Pre-trained CLIP Encoder for Embodied Instruction Following in ALFRED" style="width: 50%;" /> 
+									<h3>Pre-trained CLIP Encoder for Embodied Instruction Following in ALFRED
+										<a href="https://embodied-ai.org/papers/2022/20.pdf" target="_blank">[Paper]</a>
+									</h3>
+									<p><u><b>Abstract:</b></u> We introduce a method employing pre-trained CLIP encoders to enhance model generalization in the ALFRED task. In contrast to previous literature where CLIP replaces the visual encoder, we suggest using CLIP as an additional module through an auxiliary object detection objective. We validate our method on the recently proposed Episodic Transformer architecture and demonstrate that incorporating CLIP improves task performance on the unseen validation set. Additionally, our analysis results support that CLIP especially helps with leveraging object descriptions, detecting small objects, and interpreting rare words.</p>
+								</div>
+							</article>
+							
+							<article class="col-6 col-12-xsmall work-item">
+								<!-- Visible content for users -->
+								<a href="#content-neuroinformatics" class="image fit thumb mfp-inline">
+									<img src="images/neuroinformatics.png" alt="Automatic Brain Pathology Analysis for Traumatic Brain Injury" />
+								</a>
+								<h3>Automatic Brain Pathology Analysis for Traumatic Brain Injury</h3>
+								<!-- Hidden content for Magnific Popup -->
+								<div id="content-neuroinformatics" class="mfp-hide">
+									<img src="images/neuroinformatics.png" alt="Automatic Brain Pathology Analysis for Traumatic Brain Injury" style="width: 45%;" /> 
+									<h3>Automatic Brain Pathology Analysis for Traumatic Brain Injury
+										<a href="https://link.springer.com/article/10.1007/s12021-018-9405-x" target="_blank">[Paper]</a>
+									</h3>
+									<p><u><b>Abstract:</b></u> Traumatic brain injury (TBI) is one of the leading causes of death and disability worldwide. Detailed studies of the microglial response after TBI require high throughput quantification of changes in microglial count and morphology in histological sections throughout the brain. In this paper, we present a fully automated end-to-end system that is capable of assessing microglial activation in white matter regions on whole slide images of Iba1 stained sections. Our approach involves the division of the full brain slides into smaller image patches that are subsequently automatically classified into white and grey matter sections. On the patches classified as white matter, we jointly apply functional minimization methods and deep learning classification to identify Iba1-immunopositive microglia. Detected cells are then automatically traced to preserve their complex branching structure after which fractal analysis is applied to determine the activation states of the cells. The resulting system detects white matter regions with 84% accuracy, detects microglia with a performance level of 0.70 (F1 score, the harmonic mean of precision and sensitivity) and performs binary microglia morphology classification with a 70% accuracy. This automated pipeline performs these analyses at a 20-fold increase in speed when compared to a human pathologist. Moreover, we have demonstrated robustness to variations in stain intensity common for Iba1 immunostaining. A preliminary analysis was conducted that indicated that this pipeline can identify differences in microglia response due to TBI. An automated solution to microglia cell analysis can greatly increase standardized analysis of brain slides, allowing pathologists and neuroscientists to focus on characterizing the associated underlying diseases and injuries.</p>
+								</div>
+							</article>
+							
+						</div>
+						<!-- <ul class="actions">
+							<li><a href="#" class="button">Full Portfolio</a></li>
+						</ul> -->
+
+					    <!-- Start of Papers Subsection -->
+						<div id="papers-subsection">
+							<h3>Publications</h3>
+							<table class="papers-table">
+								<tbody>
+									<tr>
+										<td class="year">2023</td>
+										<td>
+											<a href="https://r2hcai.github.io/AAAI-23/files/CameraReadys/46.pdf" target="_blank">Temporal Supervised Contrastive Learning with Applications to Tabular Time Series Data</a>,
+											<span class="venue">AAAI 2023 R2HCAI Workshop</span>
+											<span> - S. Noroozizadeh, J. Weiss, G. Chen</span>
+										</td>
+									</tr>
+									<tr>
+										<td class="year">2022</td>
+										<td>
+											<a href="https://embodied-ai.org/papers/2022/20.pdf" target="_blank">ET tu, CLIP? Addressing Common Object Errors for Unseen Environments</a>,
+											<span class="venue">CVPR 2022 Embodied-AI Workshop</span>
+											<span> - Y.W. Byon *, C. Jiao *, S. Noroozizadeh *, J. Sun *, R. Vitiello *</span>
+										</td>
+									</tr>
+									<tr>
+										<td class="year">2019</td>
+										<td>
+											<a href="https://link.springer.com/article/10.1007/s12021-018-9405-x" target="_blank">An end-to-end system for automatic characterization of iba1 immunopositive microglia in whole slide imaging</a>,
+											<span class="venue">Neuroinformatics Journal</span>
+											<span> - A.D. Kyriazis *, S. Noroozizadeh *, A. Refaee *, W. Choi *, L.T. Chu *, A. Bashir, W.H. Cheng, R. Zhao, D.R. Namjoshi, S.E. Salcudean, C.L. Wellington, G. Nir</span>
+										</td>
+									</tr>
+									<!-- Add more rows for more papers -->
+								</tbody>
+							</table>
+						</div>
+						<!-- End of Papers Subsection -->
+
+
+						<!-- Start of Honours and Awards Subsection -->
+						<h3>Honours and Awards</h3>
+						<ul class="honours-list">
+							<li><b>[2023-2026]</b> Doctoral Fellowship, Natural Sciences and Engineering Research Council of Canada (NSERC)</li>
+							<li><b>[2023]</b> Suresh Konda Memorial, Ph.D. First Research Paper Award, (CMU Heinz College)</li>
+							<li><b>[2022-2023]</b> Center for Machine Learning and Health, Digital Health Innovation Fellowship
+							<a href="https://www.cs.cmu.edu/cmlh/digital-health-archive/cmlh-digital-health-fellows-2022#:~:text=Chain%20Monte%20Carlo%22-,Shahriar,-Noroozizadeh%20is%20a">[Link]</a></li>
+							<li><b>[2018-2019]</b> Carnegie Mellon University Presidential Fellowship (CMU College of Engineering CIT)</li>
+							<li><b>[2017]</b> UBC Self-Directed Research Abroad Award (Computational Gene Sequencing Research at USC)</li>
+							<li><b>[2017]</b> Award for Excellence in Biomedical Engineering Student Design and Innovation as Finalist, Medical Device Development Centre (MDDC), Vancouver, Canada
+							<a href="https://www.engphys.ubc.ca/2017/08/14/">[Link]</a></li>
+							<li><b>[2016]</b> Coordinated International Experience Award (ETH Zürich)</li>
+							<li><b>[2016]</b> The Google Games 2016 (UBC): Third Place / 1st Place in Coding Challenge (Google)
+							<a href="https://www.engphys.ubc.ca/2016/10/01/first-place-finish-in-coding-challenge-at-ubc-google-games/">[Link]</a></li>
+							<li><b>[2015]</b> IEEEXtreme 9.0 Programming Contest: 1st Place at UBC, 4th in Canada (IEEE)</li>
+							<li><b>[2014-2018]</b> Applied Science Dean’s Honour List (4x)</li>
+							<li><b>[2014]</b> Science Scholar Designation (University of British Columbia)</li>
+							<li><b>[2014]</b> First Year Enriched Physics Top Echelon (University of British Columbia)</li>
+							<li><b>[2013]</b> Chancellor’s Scholar (University of British Columbia)</li>
+							<li><b>[2012]</b> Certificate of Distinction, Canadian Senior Mathematics Contest (University of Waterloo)</li>
+						</ul>
+						<!-- End of Honours and Awards Subsection -->
+
+
+
+						<!-- Start of Combined Subsection -->
+						<div id="combined-subsection">
+							<!-- Start of Teaching Experience Column -->
+							<div class="column half teaching">
+								<h3>Teaching Experience</h3>
+								<ul class="teaching-list">
+									<!-- Add your teaching experiences here. Example: -->
+									<li><b>[2023]</b> Machine Learning for Problem Solving, CMU</li>
+									<li><b>[2023, 2022]</b> Unstructured Data Analytics, CMU</li>
+									<li><b>[2023, 2022]</b> PhD Microeconomics, CMU</li>
+									<li><b>[2020]</b> Neural Signal Processing, CMU</li>
+									<li><b>[2020]</b> Fundamentals of Computational BME, CMU</li>
+									<li><b>[2017, 2016]</b> Algorithms and Data Structures, UBC</li>
+									<li><b>[2014]</b> Computer Science Fundamentals, UBC</li>
+									<!-- ... -->
+								</ul>
+							</div>
+							<!-- End of Teaching Experience Column -->
+
+							<!-- Start of Services Column -->
+							<div class="column half services">
+								<h3>Services</h3>
+								<ul class="services-list">
+									<li><b>[2023]</b> Reviewer, ICLR</li>
+									<li><b>[2023]</b> Reviewer, NeurIPS</li>
+									<li><b>[2023]</b> Reviewer, AAAI</li>
+									<!-- ... -->
+								</ul>
+							</div>
+							<!-- End of Services Column -->
+
+						</div>
+						<!-- End of Combined Subsection -->
+					</section>
+					
+				
+
+				<!-- Work Experience -->
+				<section id="work-experience">
+					<h2>Work Experience</h2>
+					<div class="row">
+						<article class="col-6 col-12-xsmall work-item">
+							<!-- Visible content for users -->
+							<a href="#content-microsoft" class="image fit thumb mfp-inline">
+								<img src="images/microsoft.jpg" alt="Microsoft" />
+							</a>
+							<h3>Microsoft</h3>
+							<p>Software Development Engineering Intern</p>
+							
+							<!-- Hidden content for Magnific Popup -->
+							<div id="content-microsoft" class="mfp-hide">
+								<img src="images/microsoft.jpg" alt="Microsoft" style="width: 20%;" />
+								<!-- <h3>Microsoft</h3> -->
+								<p><u><b>Software Development Engineering Intern [2015]:</b></u> Main focus areas researched and worked on during this internship included:
+									Windows 10 Universal Application Platform (UAP), Windows 10 NFL Application, Development of a Key Performance Indicator (KPI) System, Mocking Framework Development, Coded User Interface (UI) Automation and Build Machine Automation Development.</p>
+							</div>
+						</article>
+						
+						<article class="col-6 col-12-xsmall work-item">
+							<!-- Visible content for users -->
+							<a href="#content-philips" class="image fit thumb mfp-inline">
+								<img src="images/philips.jpeg" alt="Philips Healthcare Research" />
+							</a>
+							<h3>Philips Healthcare Research</h3>
+							<p>Research and Development Intern</p>
+							
+							<!-- Hidden content for Magnific Popup -->
+							<div id="content-philips" class="mfp-hide">
+								<img src="images/philips.jpeg" alt="Philips Healthcare Research" style="width: 20%;" />
+								<!-- <h3>Philips Healthcare Research</h3> -->
+								<p><u><b>Research and Development Intern [2016]:</b></u> Developed an electronic nose sensor that is capable of selectively and sensitively detect biomarkers in exhaled breath to improve the emergency diagnosis of lung infections for patients with respiratory diseases including Acute Respiratory Distress Syndrome (ARDS). I designed a standalone signal processing algorithm and application tailored for gas chromatography data, which effectively isolated the presence of octane—a critical biomarker of ARDS in exhaled breath. This application was instrumental in enhancing the accuracy and reliability of the electronic nose sensor, especially given the challenges of non-real-time data processing.</p>
+							</div>
+						</article>
+					</div>
+					<!-- <ul class="actions">
+						<li><a href="#" class="button">Full Portfolio</a></li>
+					</ul> -->
+				</section>				
+
+				<!-- Past Projects -->
+				<section id="past-projects">
+					<h2>Past Research and Project Experiences</h2>
+					<div class="row">
+
+						<!-- First Item: BERT_CRF -->
+						<article class="col-6 col-12-xsmall work-item">
+							<a href="#content-BERT_CRF" class="image fit thumb mfp-inline">
+								<img src="images/BERT_CRF.png" alt="" />
+							</a>
+							<h3>“BERT, do you still love me?” <br> A painful perspective from CRF</h3>
+							<div id="content-BERT_CRF" class="mfp-hide popup-content">
+								<img src="images/BERT_CRF.png" alt="" style="width: 50%;" />
+								<h3>“BERT, do you still love me?” A painful perspective from CRF </h3>
+								<p> <u><b>[Best Poster Award: Probabilistic Graphical Models]</b></u> Developed and complied a comprehensive study of using graphical models on top of BERT and RNN variants for evaluating the encoding capacity of these models in Part of Speech Tagging (POS) and Named Entity Recognition (NER) tasks. Provided evidence of performance boost with end-to-end training of a conditional random field (CRF) on top of a pretrained BERT.</p>
+							</div>
+						</article>
+					
+						<!-- Second Item: PETS_MBRL -->
+						<article class="col-6 col-12-xsmall work-item">
+							<a href="#content-PETS_MBRL" class="image fit thumb mfp-inline">
+								<img src="images/PETS_MBRL.png" alt="" />
+							</a>
+							<h3>Model-Based Reinforcement Learning with Probabilistic Ensemble and Trajectory Sampling</h3>
+							<div id="content-PETS_MBRL" class="mfp-hide popup-content">
+								<img src="images/PETS_MBRL.png" alt="" style="width: 50%;" />
+								<h3>Model-Based Reinforcement Learning with Probabilistic Ensemble and Trajectory Sampling (PETS)</h3>
+								<p>Implemented the PETS algorithm as a model-based RL method to solve the Pusher environment of OpenAI-Gym for a robotic arm to push an object to reach to a randomly positioned goal location: <br>
+									(i) Using probabilistic ensemble of neural networks outputting distribution over the resulting states given a state and action pair. <br>
+									(ii) Propagate hallucinated trajectories through time by passing hypothetical state-action pairs through different networks of the ensemble. <br>
+									(iii) Planning with model predictive control (MPC) on top of Cross Entropy Method (CEM) for random shooting.</p>
+							</div>
+						</article>
+					
+						<!-- Third Item: S3VM -->
+						<article class="col-6 col-12-xsmall work-item">
+							<a href="#content-S3VM" class="image fit thumb mfp-inline">
+								<img src="images/S3VM.png" alt="" />
+							</a>
+							<h3>Semi-Supervised Support Vector Machine (S3VM)</h3>
+							<div id="content-S3VM" class="mfp-hide popup-content">
+								<img src="images/S3VM.png" alt="" style="width: 50%;" />
+								<h3>Semi-Supervised Support Vector Machine (S3VM)</h3>
+								<p>Developed a self-training scheme with SVM to improve classification accuracy of the training data when only a small subset is labeled. Additionally, implemented a quasi- Newton method Semisupervised Support Vector Machine (S3VM). Applied these two techniques for the task of image classification of MNIST and CIFAR10 datasets. Showed significant improvement in classification accuracy in the range that only 30%-50% of data is labeled as compared to conventional SVM. </p>
+							</div>
+						</article>
+					
+						<!-- Fourth Item: tFUS -->
+						<article class="col-6 col-12-xsmall work-item">
+							<a href="#content-tFUS" class="image fit thumb mfp-inline">
+								<img src="images/tFUS.png" alt="" />
+							</a>
+							<h3>Transcranial Focused Ultrasound Stimulation (tFUS)</h3>
+							<div id="content-tFUS" class="mfp-hide popup-content">
+								<img src="images/tFUS.png" alt="" style="width: 50%;" />
+								<h3>Transcranial Focused Ultrasound Stimulation (tFUS)</h3>
+								<p> <u><b><a href="https://drive.google.com/file/d/1iUfV4gimAnLFZUf9FgRXyzKLeEfHwaw9/view?usp=drive_link">[Thesis]</a>: Characterization of Transcranial Focused Ultrasound Field to Reduce Ultrasonic Standing Waves</b></u> <br>
+									• Multiple neural engineering research projects ranging from neural device development and neural signal processing and computation. <br>
+									• Developed a novel method for enhancing the neuromodulation modality of transcranial Focused Ultrasound Stimulation (tFUS) through computer simulations, ex-vivo experimentation, and in-vivo rodent model demonstration (Publication in preparation). <br>
+									• Utilizing unsupervised learning algorithms for automated spike sorting of in-vivo intracranial neural data collected (a review journal publication in preparation). <br> 
+									• Contributing with MRI and non-invasive Brain Computer Interface (BCI) experimentation for enhancing the control of 2D cursor.</p>
+							</div>
+						</article>
+					
+						<!-- Fifth Item: PATgpu_research -->
+						<article class="col-6 col-12-xsmall work-item">
+							<a href="#content-PATgpu_research" class="image fit thumb mfp-inline">
+								<img src="images/PATgpu_research.png" alt="" />
+							</a>
+							<h3>A GPU-Accelerated Inversion Algorithm for Photoacoustic Tomography</h3>
+							<div id="content-PATgpu_research" class="mfp-hide popup-content">
+								<img src="images/PATgpu_research.png" alt="" style="width: 50%;" />
+								<h3>A GPU-Accelerated Inversion Algorithm for Photoacoustic Tomography</h3>
+								<p>Developed GPU-Accelerated Inversion Algorithm for Photoacoustic Tomography. The implemented algorithm reduces the computation time for photoacoustic tomography for the research in the field of breast cancer screening. Using multi-threaded and parallel processing feature of GPU architecture with CUDA, we worked on a real-time 3D visualization of the imaging at the time of the diagnosis.</p>
+							</div>
+						</article>
+					
+						<!-- Sixth Item: USCsequencing_Preclustering -->
+						<article class="col-6 col-12-xsmall work-item">
+							<a href="#content-USCsequencing_Preclustering" class="image fit thumb mfp-inline">
+								<img src="images/USCsequencing_Preclustering.png" alt="" />
+							</a>
+							<h3>Pre-clustering RNA sequences Database for Long-read de Novo Transcriptome Error Correction</h3>
+							<div id="content-USCsequencing_Preclustering" class="mfp-hide popup-content">
+								<img src="images/USCsequencing_Preclustering.png" alt="" style="width: 50%;" />
+								<h3>Pre-clustering RNA sequences Database for Long-read de Novo Transcriptome Error Correction</h3>
+								<p>Developed unsupervised machine learning algorithms for pre-clustering Pacific Biosciences RNA sequences database and improving the grouping of similar transcripts to be used for long-read de novo transcriptome error correction. The results obtained from this clustering method achieves better accuracy and runtime for CONVEX tool for fast and accurate de novo transcriptome recovery from long reads.</p>
+							</div>
+						</article>
+					
+						<!-- Seventh Item: batbot -->
+						<article class="col-6 col-12-xsmall work-item">
+							<a href="#content-batbot" class="image fit thumb mfp-inline">
+								<img src="images/batbot.jpg" alt="" />
+							</a>
+							<h3>Rescue-Bot: BatBot Rescuing Pets from Fire</h3>
+							<div id="content-batbot" class="mfp-hide popup-content">
+								<img src="images/batbot.jpg" alt="" style="width: 50%;" />
+								<h3>Rescue-Bot: BatBot Rescuing Pets from a Building on Fire</h3>
+								<p>Fully designed, built, and tested an autonomous robot 6 pets and managed to finish the competition as the quarter-finalist among 16 teams. 500+ hours of work on: <br> 
+									<u><b>Implemented more than 2000 lines of C++ code</b></u> including control algorithms for the drive system and the robotic arm.
+									<u><b>Designed and built circuits</b></u> such as H-bridge (run motors), IR receiver circuit (to find the last two pets, and find the way back), Pulse-Width Modulation circuit (to feed the motors), and various signal filters.
+									<u><b>Designed and built the full body of the robot using a CAD software (SolidWorks)</b></u> and made a robotic arm able to collect pets placed in all possible coordinates of space. Made full use of fabrication tools: Waterjet, laser cutter, 3D printer.
+								</p>
+							</div>
+						</article>
+					
+					</div>
+					<!-- <ul class="actions">
+						<li><a href="#" class="button">Full Portfolio</a></li>
+					</ul> -->
+				</section>
+
+				<!-- News Section -->
+				<section id="news-section">
+					<h2>📣 News</h2>
+					
+					<div id="news-content">
+						<ul>
+							<li><span><b>[Sep 2023]</b></span> Awarded Natural Sciences and Engineering Research Council of Canada (NSERC) CGS-D/PGS-D Fellowship</li>
+							<li><span><b>[May 2023]</b></span> Awarded best first paper award at Heinz</li>
+							<li><span><b>[Feb 2023]</b></span> Oral Presentation at AAAI'23 Representation Learning for Responsible Human-Centric AI 
+							<a href="https://r2hcai.github.io/AAAI-23/files/CameraReadys/46.pdf">[Paper]</a> <a href="https://www.youtube.com/watch?v=sykp_gKXpAk&ab_channel=ShahriarNoroozizadeh">[Video]</a> </li>
+							</li>
+							<li><span><b>[Sep 2022]</b></span> Awarded <a href="https://www.cs.cmu.edu/cmlh/digital-health-archive/cmlh-digital-health-fellows-2022#:~:text=Chain%20Monte%20Carlo%22-,Shahriar,-Noroozizadeh%20is%20a">
+								Fellowship in Digital Health Innovation</a> from Center for Machine Learning and Health (CMLH) at CMU</li>
+							<li><span><b>[Jun 2022]</b></span> Poster at CVPR'22 Embodied AI Workshop
+							<a href="https://link.springer.com/article/10.1007/s12021-018-9405-x">[Paper]</a>
+							</li>
+							<li><span><b>[May 2022]</b></span> Graduated from Machine Learning Master's at CMU! </li>
+							<li><span><b>[Sep 2021]</b></span> Started a joint PhD at Heinz College and Machine Learning Department at CMU! </li>
+							<li><span><b>[Dec 2020]</b></span> Graduated from Biomedical Engineering Master's at CMU!  <a href="https://drive.google.com/file/d/1iUfV4gimAnLFZUf9FgRXyzKLeEfHwaw9/view">[Thesis]</a></li>
+							<li><span><b>[Jan 2019]</b></span> Paper accepted to Neuroinformatics Journal! (AShLAW 🎉) <a href="https://link.springer.com/article/10.1007/s12021-018-9405-x">[Paper]</a> </li>
+							<li><span><b>[Sep 2018]</b></span> Awarded CMU Presidential Fellowship from College of Engineering</li>
+							<li><span><b>[May 2018]</b></span> Graduated from Engineering Physics with EECS Specilization at UBC!</li>
+							<!-- Add more list items for additional news updates -->
+						</ul>
+					</div>
+				</section>
+
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li> -->
+						<li><a href="https://github.com/Shahriarnz14" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<li><a href="https://ca.linkedin.com/in/shahriar-noroozi-zadeh-a4169ba4" class="icon brands fa-linkedin"><span class="label">Github</span></a></li>
+						<li>
+							<a href="https://scholar.google.com/citations?user=3mRjov8AAAAJ&hl=en&oi=ao" style="background-image: url('assets/css/images/googlescholar.png'); background-size: contain; background-repeat: no-repeat; background-position: center; width: 21px; height: 21px; display: inline-block;"></a>
+						</li>
+						<!-- <li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li> -->
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Shahriar Noroozizadeh</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+		<!-- <script src="assets/js/jquery.poptrox.min.js"></script> -->
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+		<script>
+			$(document).ready(function() {
+				// Smooth scrolling for anchor links
+				$("a[href^='#']:not([href='#'])").on('click', function(event) {
+					event.preventDefault();
+					
+					if ($(this).hasClass('mfp-inline')) {
+						return;  // If it's a popup link, don't proceed with the scrolling logic
+					}
+					
+					var target = this.hash;
+					var $targetElem = $(target);
+					
+					// Check if the target element exists and has a defined offset
+					if ($targetElem.length && $targetElem.offset()) {
+						$('html, body').animate({
+							scrollTop: $targetElem.offset().top
+						}, 800, function(){
+							window.location.hash = target;
+						});
+					}
+				});
+			});
+		</script>
+
+		<script>
+			$(document).ready(function() {
+			$('.mfp-inline').magnificPopup({
+				type: 'inline',
+				midClick: true,
+				mainClass: 'mfp-fade',
+				removalDelay: 300
+			});
+			});
+		</script>
+
+			
+
+	</body>
+</html>
