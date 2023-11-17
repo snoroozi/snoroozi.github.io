@@ -1,4 +1,5 @@
 @import url("fontawesome-all.min.css");
+@import url("academicons.min.css");
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic");
 
 /*
@@ -2693,6 +2694,17 @@ input, select, textarea {
     }
 }
 
+
+.mfp-hide {
+    display: none;
+}
+
+.custom-popup-size {
+    width: 90%;
+    height: 90%;
+}
+
+
 /* Header */
 
 #header {
@@ -2701,7 +2713,7 @@ input, select, textarea {
     align-items: flex-end;
     justify-content: space-between;
     background-color: #1f1815;
-    background-image: url("images/overlay.png"), url("../../images/lionsGate.png");
+    background-image: url("images/overlay.png"), url("../../images/lionsGate.jpg");
     background-position: center, center;
     background-repeat: repeat, no-repeat;
     background-size: auto, cover;
@@ -2813,6 +2825,32 @@ input, select, textarea {
 			font-weight: bold;  /* This makes the text inside the span bold */
 			margin-right: 8px;
 		}
+
+/* Custom Styles for Social Media Links */
+/* GitHub Link */
+#footer .icons a[href*="github.com"] {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* LinkedIn Link */
+#footer .icons a[href*="linkedin.com"] {
+    color: rgb(255, 255, 255, 0.7) !important;
+}
+
+/* Google Scholar Link */
+#footer .icons a[href*="scholar.google.com"] {
+    color: rgb(255, 255, 255, 0.7) !important;
+}
+
+#footer .icons a[href*="Resume_Shahriar_Noroozizadeh"] {
+    color: rgb(255, 255, 255, 0.7) !important;
+}
+
+/* Hover Effect - Reverting to default hover behavior */
+#footer .icons a:hover {
+    color: #3fc8ea !important;
+}
+
 
 	/* Paper section */
 	#papers-subsection {

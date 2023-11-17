@@ -421,11 +421,17 @@
 					<ul class="icons">
 						<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li> -->
 						<li><a href="https://github.com/Shahriarnz14" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="https://ca.linkedin.com/in/shahriar-noroozi-zadeh-a4169ba4" class="icon brands fa-linkedin"><span class="label">Github</span></a></li>
+						<li><a href="https://ca.linkedin.com/in/shahriar-noroozi-zadeh-a4169ba4" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
 						<li>
-							<a href="https://scholar.google.com/citations?user=3mRjov8AAAAJ&hl=en&oi=ao" style="background-image: url('assets/css/images/googlescholar.png'); background-size: contain; background-repeat: no-repeat; background-position: center; width: 21px; height: 21px; display: inline-block;"></a>
+							<a href="https://scholar.google.com/citations?user=3mRjov8AAAAJ&hl=en&oi=ao" class="ai ai-google-scholar ai-2x"><span class="label"></span></a>
 						</li>
-						<!-- <li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li> -->
+						<li>
+							<a href="Resume_Shahriar_Noroozizadeh_online.pdf" class="ai ai-cv ai-2x mfp-iframe-popup"><span class="label"></span></a>
+							<!-- Hidden content for Magnific Popup -->
+							<div id="cv-popup" class="mfp-hide">
+								<iframe src="Resume_Shahriar_Noroozizadeh_online.pdf" style="width:90%; height:90%;" frameborder="0"></iframe>
+							</div>
+						</li>
 					</ul>
 					<ul class="copyright">
 						<li>&copy; Shahriar Noroozizadeh</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
@@ -476,6 +482,27 @@
 				mainClass: 'mfp-fade',
 				removalDelay: 300
 			});
+			});
+		</script>
+
+		<script>
+			$(document).ready(function() {
+				$('.mfp-iframe-popup').magnificPopup({
+					type: 'iframe',
+					mainClass: 'mfp-fade custom-popup-size',
+					removalDelay: 300,
+					preloader: false,
+					fixedContentPos: true,
+					iframe: {
+						patterns: {
+							pdf: {
+								index: 'Resume_Shahriar_Noroozizadeh_online.pdf',
+								id: '/',
+								src: '%id%'
+							}
+						}
+					}
+				});
 			});
 		</script>
 
