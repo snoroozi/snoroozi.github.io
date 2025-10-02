@@ -2865,7 +2865,43 @@ input, select, textarea {
 		border: none;  /* Resetting in case there's a global border */
 	}
 
+	/* Paper section */
+	#working-papers-subsection {
+		margin-top: 20px;  /* Adjust as needed for desired spacing */
+	}
+
+	#working-papers-subsection h3 {
+		font-size: 28px;
+		text-align: left;
+		margin-bottom: 20px;
+		background-color: transparent;  /* Resetting in case there's a global background */
+		border: none;  /* Resetting in case there's a global border */
+	}
+
+	/* Paper section */
+	#papers-preprint-subsection {
+		margin-top: 20px;  /* Adjust as needed for desired spacing */
+	}
+
+	#papers-preprint-subsection h3 {
+		font-size: 28px;
+		text-align: left;
+		margin-bottom: 20px;
+		background-color: transparent;  /* Resetting in case there's a global background */
+		border: none;  /* Resetting in case there's a global border */
+	}
+
 .papers-table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.working-papers-table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.papers-preprint-table {
 	width: 100%;
 	border-collapse: collapse;
 }
@@ -3560,3 +3596,8 @@ input, select, textarea {
 			}
 
 	}
+
+.inactiveLink {
+   pointer-events: none;
+   cursor: default;
+}

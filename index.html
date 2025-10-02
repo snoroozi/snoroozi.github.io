@@ -40,12 +40,23 @@
 						<header class="major">
 							<h2>Hi, I'm Shahriar 👋</h2>
 						</header>
-						<p>I am a joint Machine Learning and Public Policy Management Ph.D. student at the <a href="https://www.ml.cmu.edu/">Machine Learning Department of the School of Computer Science</a> and <a href="https://www.heinz.cmu.edu/">Heinz College of Information Systems and Public Policy</a> at Carnegie Mellon University. I am very fortunate to be advised by <a href="https://www.andrew.cmu.edu/user/georgech/">Prof. George Chen</a> (Heinz and MLD) and <a href="https://www.nlm.nih.gov/research/researchstaff/WeissJeremy.html">Prof. Jeremy Weiss</a> (National Library of Medicine at NIH). I also work with <a href="https://acmilab.org/people/zachary-lipton/">Prof. Zachary Lipton</a> as my MLD Mentor. 
+						<p>I am a joint Machine Learning and Public Policy Management Ph.D. student at the <a href="https://www.ml.cmu.edu/">Machine Learning Department of the School of Computer Science</a> and <a href="https://www.heinz.cmu.edu/">Heinz College of Information Systems and Public Policy</a> at Carnegie Mellon University. I am very fortunate to be advised by <a href="https://www.andrew.cmu.edu/user/georgech/">Prof. George Chen</a> (Heinz and MLD) and <a href="https://www.nlm.nih.gov/research/researchstaff/WeissJeremy.html">Prof. Jeremy Weiss</a> (National Library of Medicine at NIH). I also work with <a href="https://acmilab.org/people/zachary-lipton/">Prof. Zachary Lipton</a> as my MLD Mentor. During my Ph.D., I have also spent time in conducting research in industry. 
+						I spent a summer at <a href="https://jobs.sanofi.com/en/digital">Sanofi Inc.</a> working on mRNA-Language Models, 
+						collaborating with <a href="https://www.linkedin.com/in/saeed-moayedpour">Saeed Moayedpour</a>, 
+						<a href="https://de.linkedin.com/in/sven-jager-950850155">Sven Jager</a>, and 
+						<a href="https://www.linkedin.com/in/ziv-bar-joseph-cmu">Ziv Bar-Joseph</a>.  
+						I am also currently working at 
+						<a href="https://research.google/">Google Research</a>, and I am fortunate to be hosted by 
+						<a href="https://vaishnavh.github.io/">Vaishnavh Nagarajan</a> and to collaborate with 
+						<a href="https://www.cs.cmu.edu/~elan/">Elan Rosenfeld</a> on understanding how sequence models 
+						such as Transformers tend to memorize geometrically.
 						<!-- <br><br> -->
 						</p>
 						<p style="margin: 0; padding: 0;"> <u><b>Research:</b></u></p>
 						<p style="margin: 0; padding: 0;">
-						My research focuses on interpretable representation learning for temporal data with application in healthcare. I am specifically interested in developing machine learning methodology uncovering temporal representations that enhance our understanding of the evolving health status of patients, shedding light on the underlying mechanisms over time. I am also interested in the intersection of machine learning and information systems management, and how we can develop and utilize machine learning tools for high-stake decision making scenarios such as those prominent in healthcare management.
+						My research focuses on interpretable representation learning for temporal data with application in healthcare. I am specifically interested in developing machine learning methodology uncovering temporal representations that enhance our understanding of the evolving health status of patients, shedding light on the underlying mechanisms over time. 
+						I am also particularly interested in sequence models, especially how the next-token prediction paradigm in large language models shapes both their strengths and limitations, and how these models exhibit implicit forms of memory and reasoning that go beyond simple associative recall.
+						In addition, I am interested in the intersection of machine learning and information systems management, and how we can develop and utilize machine learning tools for high-stakes decision-making scenarios such as those prominent in healthcare management, with a particular emphasis on causal inference and survival analysis.
 						</p>
 						<p style="margin: 0; padding: 0; font-size:0.8em"> <u><b>Research Interests:</b></u>  Representation Learning, Machine Learning for Healthcare, Multimodal Machine Learning, Decision Making, Reinforcement Learning, ML for Temporal Data, Interpretability</p>
 						<br>
@@ -67,6 +78,122 @@
 						<div class="row">
 							<article class="col-6 col-12-xsmall work-item">
 								<!-- Visible content for users -->
+								<a href="#content-transformer-geometry" class="image fit thumb mfp-inline">
+									<img src="images/transformer-geometry.png" alt="Transformers tend to memorize geometrically; it is unclear why." />
+								</a>
+								<h3>Transformers tend to memorize geometrically; it is unclear why.</h3>
+								<!-- Hidden content for Magnific Popup -->
+								<div id="content-transformer-geometry" class="mfp-hide">
+									<img src="images/transformer-geometry.png" alt="Transformers tend to memorize geometrically; it is unclear why." style="width: 50%;" /> 
+									<h3>Transformers tend to memorize geometrically; it is unclear why. <br>
+										<a href="#" class="inactiveLink" target="_blank"> [Preprint Link Available Soon]</a>
+										<!-- <a href="" target="_blank">[Code]</a> -->
+									</h3>
+									<p><u><b>Abstract:</b></u> We present a clean and analyzable phenomenon that contrasts the predominant associative view of Transformer memory with a nascent geometric view. Concretely, we present an in-weights path-finding task where a next-token learner succeeds in planning ahead, despite the task being adversarially constructed. This observation is incompatible with memory as strictly a storage of local associations; instead, training with gradient descent must have synthesized a geometry of global relationships from witnessing mere local associations. While such a geometric memory may seem intuitive in hindsight, we argue that its emergence cannot be easily explained by various pressures, be it statistical, or architectural, or supervisory. To make sense of this, we draw a connection to an open question in the simpler Node2Vec algorithm, and we provide empirical clues to a closed-form solution for what graph embeddings are learned. Our insight is that global geometry arises from a spectral bias that--in contrast to prevailing intuition--does not require low dimensionality of the embeddings. Our study raises open questions concerning implicit reasoning and the bias of gradient-based memorization, while offering a simple example for analysis. Our findings also call for revisiting theoretical abstractions of parametric memory in Transformers.
+									</p>
+								</div>
+							</article>
+
+
+							<article class="col-6 col-12-xsmall work-item">
+								<!-- Visible content for users -->
+								<a href="#content-surv-hte" class="image fit thumb mfp-inline">
+									<img src="images/SurvHTE-Bench.png" alt="SurvHTE-Bench: A Benchmark for Heterogeneous Treatment Effect Estimation in Survival Analysis" />
+								</a>
+								<h3>SurvHTE-Bench: A Benchmark for Heterogeneous Treatment Effect Estimation in Survival Analysis</h3>
+								<!-- Hidden content for Magnific Popup -->
+								<div id="content-surv-hte" class="mfp-hide">
+									<img src="images/SurvHTE-Bench.png" alt="SurvHTE-Bench: A Benchmark for Heterogeneous Treatment Effect Estimation in Survival Analysis" style="width: 50%;" /> 
+									<h3>SurvHTE-Bench: A Benchmark for Heterogeneous Treatment Effect Estimation in Survival Analysis <br>
+										<a href="#" class="inactiveLink" target="_blank"> [Preprint Link Available Soon]</a>
+										<a href="https://github.com/Shahriarnz14/SurvHTE-Benchmark" target="_blank">[Data & Code]</a>
+									</h3>
+									<p><u><b>Abstract:</b></u> Estimating heterogeneous treatment effects (HTEs) from right-censored survival data is critical in high-stakes applications such as precision medicine and individualized policy-making. Yet, the survival analysis setting poses unique challenges for HTE estimation due to censoring, unobserved counterfactuals, and complex identification assumptions. Despite recent advances, from causal survival forests to survival meta-learners and outcome imputation approaches, evaluation practices remain fragmented and inconsistent. We introduce SurvHTE‐Bench, the first comprehensive benchmark for HTE estimation with censored outcomes. The benchmark spans (i) a modular suite of synthetic datasets with known ground truth, systematically varying causal assumptions and survival dynamics, (ii) semi-synthetic datasets that pair real-world covariates with simulated treatments and outcomes, and (iii) real-world datasets from a twin study (with known ground truth) and from an HIV clinical trial. Across synthetic, semi-synthetic, and real-world settings, we provide the first rigorous comparison of survival HTE methods under diverse conditions and realistic assumption violations. SurvHTE‐Bench establishes a foundation for fair, reproducible, and extensible evaluation of causal survival methods.
+									</p>
+								</div>
+							</article>
+
+
+							<article class="col-6 col-12-xsmall work-item">
+								<!-- Visible content for users -->
+								<a href="#content-TTS-Forecast" class="image fit thumb mfp-inline">
+									<img src="images/TTS-Forecasts.png" alt="Forecasting Clinical Risk from Textual Time Series" />
+								</a>
+								<h3>Forecasting Clinical Risk from Textual Time Series: Structuring Narratives for Temporal AI in Healthcare</h3>
+								<!-- Hidden content for Magnific Popup -->
+								<div id="content-TTS-Forecast" class="mfp-hide">
+									<img src="images/TTS-Forecasts.png" alt="Forecasting Clinical Risk from Textual Time Series" style="width: 50%;" /> 
+									<h3>Forecasting Clinical Risk from Textual Time Series: Structuring Narratives for Temporal AI in Healthcare <br>
+										<a href="https://arxiv.org/abs/2504.10340" target="_blank">[Preprint: ArXiv]</a>
+										<a href="https://github.com/Shahriarnz14/Textual-Time-Series-Forecasting" target="_blank">[Code]</a>
+									</h3>
+									<p><u><b>Abstract:</b></u> Clinical case reports encode rich, temporal patient trajectories that are often underexploited by traditional machine learning methods relying on structured data. In this work, we introduce the forecasting problem from textual time series, where timestamped clinical findings -- extracted via an LLM-assisted annotation pipeline -- serve as the primary input for prediction. We systematically evaluate a diverse suite of models, including fine-tuned decoder-based large language models and encoder-based transformers, on tasks of event occurrence prediction, temporal ordering, and survival analysis. Our experiments reveal that encoder-based models consistently achieve higher F1 scores and superior temporal concordance for short- and long-horizon event forecasting, while fine-tuned masking approaches enhance ranking performance. In contrast, instruction-tuned decoder models demonstrate a relative advantage in survival analysis, especially in early prognosis settings. Our sensitivity analyses further demonstrate the importance of time ordering, which requires clinical time series construction, as compared to text ordering, the format of the text inputs that LLMs are classically trained on. This highlights the additional benefit that can be ascertained from time-ordered corpora, with implications for temporal tasks in the era of widespread LLM use.
+									</p>
+								</div>
+							</article>
+
+							
+							<article class="col-6 col-12-xsmall work-item">
+								<!-- Visible content for users -->
+								<a href="#content-TTS" class="image fit thumb mfp-inline">
+									<img src="images/Textual-Time-Series.png" alt="Textual Time-Series" />
+								</a>
+								<h3>PubMed Open Access Textual Times Series Corpus: Reconstructing patient trajectories from clinical case reports using LLMs</h3>
+								<!-- Hidden content for Magnific Popup -->
+								<div id="content-TTS" class="mfp-hide">
+									<img src="images/Textual-Time-Series.png" alt="Textual Time-Series" style="width: 50%;" /> 
+									<h3>PubMed Open Access Textual Times Series Corpus: Reconstructing patient trajectories from clinical case reports using LLMs <br>
+										<a href="https://arxiv.org/pdf/2505.20323" target="_blank">[Preprint: ArXiv [PMOA-TTS]]</a>
+										<a href="https://github.com/jcweiss2/pmoa_tts" target="_blank">[Code]</a>
+										<a href="https://huggingface.co/datasets/snoroozi/pmoa-tts" target="_blank">[Data]</a> <br>
+										<a href="https://arxiv.org/pdf/2504.12326" target="_blank">[Preprint: ArXiv [Textual Time Series corpus for Sepsis (T2S2)]]</a>
+									</h3>
+									<p><u><b>Abstract:</b></u> Understanding temporal dynamics in clinical narratives is essential for modeling patient trajectories, yet large-scale temporally annotated resources remain limited. We present PMOA-TTS, the first openly available dataset of 124,699 PubMed Open Access (PMOA) case reports, each converted into structured (event, time) timelines via a scalable LLM-based pipeline. Our approach combines heuristic filtering with Llama 3.3 to identify single-patient case reports, followed by prompt-driven extraction using Llama 3.3 and DeepSeek R1, resulting in over 5.6 million timestamped clinical events. To assess timeline quality, we evaluate against a clinician-curated reference set using three metrics: (i) event-level matching (80% match at a cosine similarity threshold of 0.1), (ii) temporal concordance (c-index > 0.90), and (iii) Area Under the Log-Time CDF (AULTC) for timestamp alignment. Corpus-level analysis shows wide diagnostic and demographic coverage. In a downstream survival prediction task, embeddings from extracted timelines achieve time-dependent concordance indices up to 0.82 ± 0.01, demonstrating the predictive value of temporally structured narratives. PMOA-TTS provides a scalable foundation for timeline extraction, temporal reasoning, and longitudinal modeling in biomedical NLP. The dataset is available at: <a href="https://huggingface.co/datasets/snoroozi/pmoa-tts">https://huggingface.co/datasets/snoroozi/pmoa-tts</a>.
+									</p>
+								</div>
+							</article>
+
+
+							<article class="col-6 col-12-xsmall work-item">
+								<!-- Visible content for users -->
+								<a href="#content-causal-survival" class="image fit thumb mfp-inline">
+									<img src="images/Causal-Survival-Analysis-CHIL.png" alt="The Impact of Medication Non-adherence on Adverse Outcomes: Evidence from Schizophrenia Patients via Survival Analysis" />
+								</a>
+								<h3>The Impact of Medication Non-adherence on Adverse Outcomes: Evidence from Schizophrenia Patients via Survival Analysis</h3>
+								<!-- Hidden content for Magnific Popup -->
+								<div id="content-causal-survival" class="mfp-hide">
+									<img src="images/Causal-Survival-Analysis-CHIL.png" alt="The Impact of Medication Non-adherence on Adverse Outcomes: Evidence from Schizophrenia Patients via Survival Analysis" style="width: 50%;" />
+									<h3>The Impact of Medication Non-adherence on Adverse Outcomes: Evidence from Schizophrenia Patients via Survival Analysis <br>
+										<a href="https://proceedings.mlr.press/v287/noroozizadeh25a.html" target="_blank">[Paper: CHIL-2025]</a>
+										<a href="https://github.com/Shahriarnz14/causal-meta-learner-survival-analysis" target="_blank">[Code]</a>
+									</h3>
+									<p><u><b>Abstract:</b></u> This study quantifies the association between non-adherence to antipsychotic medications and adverse outcomes in individuals with schizophrenia. We frame the problem using survival analysis, focusing on the time to the earliest of several adverse events (early death, involuntary hospitalization, jail booking). We extend standard causal inference methods (T-learner, S-learner, nearest neighbor matching) to utilize various survival models to estimate individual and average treatment effects, where treatment corresponds to medication non-adherence. Analyses are repeated using different amounts of longitudinal information (3, 6, 9, and 12 months). Using data from Allegheny County in western Pennsylvania, we find strong evidence that non-adherence advances adverse outcomes by approximately 1 to 4 months. Ablation studies confirm that county-provided risk scores adjust for key confounders, as their removal amplifies the estimated effects. Subgroup analyses by medication formulation (injectable vs. oral) and medication type consistently show that non-adherence is associated with earlier adverse events. These findings highlight the clinical importance of adherence in delaying psychiatric crises and show that integrating survival analysis with causal inference tools can yield policy-relevant insights. We caution that although we apply causal inference, we only make associative claims and discuss assumptions needed for causal interpretation.
+									</p>
+								</div>
+							</article>
+
+
+							<article class="col-6 col-12-xsmall work-item">
+								<!-- Visible content for users -->
+								<a href="#content-mRNA-LM" class="image fit thumb mfp-inline">
+									<img src="images/mRNA-LM.png" alt="mRNA-Language Model" />
+								</a>
+								<h3>mRNA-LM: full-length integrated SLM for mRNA analysis</h3>
+								<!-- Hidden content for Magnific Popup -->
+								<div id="content-mRNA-LM" class="mfp-hide">
+									<img src="images/mRNA-LM.png" alt="mRNA-Language Model" style="width: 50%;" /> 
+									<h3>mRNA-LM: full-length integrated SLM for mRNA analysis <br>
+										<a href="https://academic.oup.com/nar/article/53/3/gkaf044/7997216" target="_blank">[Paper: SemEval-2024 at NAACL]</a>
+										<a href="https://github.com/Sanofi-Public/mRNA-LM" target="_blank">[Code]</a>
+									</h3>
+									<p><u><b>Abstract:</b></u> The success of SARS-CoV-2 (severe acute respiratory syndrome coronavirus 2) messenger RNA (mRNA) vaccine has led to increased interest in the design and use of mRNA for vaccines and therapeutics. Still, selecting the most appropriate mRNA sequence for a protein remains a challenge. Several recent studies have shown that the specific mRNA sequence can have a significant impact on the translation efficiency, half-life, degradation rates, and other issues that play a major role in determining vaccine efficiency. To enable the selection of the most appropriate sequence, we developed mRNA-LM, an integrated small language model for modeling the entire mRNA sequence. mRNA-LM uses the contrastive language–image pretraining integration technology to combine three separate language models for the different mRNA segments. We trained mRNA-LM on millions of diverse mRNA sequences from several different species. The unsupervised model was able to learn meaningful biology related to evolution and host–pathogen interactions. Fine-tuning of mRNA-LM allowed us to use it in several mRNA property prediction tasks. As we show, using the full-length integrated model led to accurate predictions, improving on prior methods proposed for this task.
+									</p>
+								</div>
+							</article>
+
+
+							<article class="col-6 col-12-xsmall work-item">
+								<!-- Visible content for users -->
 								<a href="#content-TLDR" class="image fit thumb mfp-inline">
 									<img src="images/TLDR-Model.jpg" alt="T5-generated clinical-Language summaries for DeBERTa Report Analysis (TLDR)" />
 								</a>
@@ -74,8 +201,9 @@
 								<!-- Hidden content for Magnific Popup -->
 								<div id="content-TLDR" class="mfp-hide">
 									<img src="images/TLDR-Model.jpg" alt="T5-generated clinical-Language summaries for DeBERTa Report Analysis (TLDR)" style="width: 50%;" /> 
-									<h3>T5-generated clinical-Language summaries for DeBERTa Report Analysis (TLDR)
+									<h3>T5-generated clinical-Language summaries for DeBERTa Report Analysis (TLDR) <br>
 										<a href="https://aclanthology.org/2024.semeval-1.79/" target="_blank">[Paper: SemEval-2024 at NAACL]</a>
+										<a href="https://github.com/Shahriarnz14/TLDR-T5-generated-clinical-Language-for-DeBERTa-Report-Analysis" target="_blank">[Code]</a>
 									</h3>
 									<p><u><b>Abstract:</b></u> This paper introduces novel methodologies for the Natural Language Inference for Clinical Trials (NLI4CT) task. We present TLDR (T5-generated clinical-Language summaries for DeBERTa Report Analysis) which incorporates T5-model generated premise summaries for improved entailment and contradiction analysis in clinical NLI tasks. This approach overcomes the challenges posed by small context windows and lengthy premises, leading to a substantial improvement in Macro F1 scores: a 0.184 increase over truncated premises. Our comprehensive experimental evaluation, including detailed error analysis and ablations, confirms the superiority of TLDR in achieving consistency and faithfulness in predictions against semantically altered inputs.
 									</p>
@@ -92,9 +220,10 @@
 								<!-- Hidden content for Magnific Popup -->
 								<div id="content-TSCL" class="mfp-hide">
 									<img src="images/TSCL-MIMIC.jpg" alt="Temporal-Supervised Contrastive Learning: Modeling Patient Risk Progression" style="width: 50%;" /> 
-									<h3>Temporal-Supervised Contrastive Learning: Modeling Patient Risk Progression
+									<h3>Temporal-Supervised Contrastive Learning: Modeling Patient Risk Progression <br>
 										<a href="https://proceedings.mlr.press/v225/noroozizadeh23a.html" target="_blank">[Paper: ML4H]</a>
 										<a href="https://r2hcai.github.io/AAAI-23/files/CameraReadys/46.pdf" target="_blank">[Paper: AAAI - R2HCAI Workshop]</a>
+										<a href="https://github.com/Shahriarnz14/Temporal-Supervised-Contrastive-Learning" target="_blank">[Code]</a>
 									</h3>
 									<p><u><b>Abstract:</b></u> We consider the problem of predicting how the likelihood of an outcome of interest for a patient changes over time as we observe more of the patient’s data. To solve this problem, we propose a supervised contrastive learning framework that learns an embedding representation for each time step of a patient time series. Our framework learns the embedding space to have the following properties: (1) nearby points in the embedding space have similar predicted class probabilities, (2) adjacent time steps of the same time series map to nearby points in the embedding space, and (3) time steps with very different raw feature vectors map to far apart regions of the embedding space. To achieve property (3), we employ a nearest neighbor pairing mechanism in the raw feature space. This mechanism also serves as an alternative to “data augmentation”, a key ingredient of contrastive learning, which lacks a standard procedure that is adequately realistic for clinical tabular data, to our knowledge. We demonstrate that our approach outperforms state-of-the-art baselines in predicting mortality of septic patients (MIMIC-III dataset) and tracking progression of cognitive impairment (ADNI dataset). Our method also consistently recovers the correct synthetic dataset embedding structure across experiments, a feat not achieved by baselines. Our ablation experiments show the pivotal role of our nearest neighbor pairing.
 									</p>
@@ -124,7 +253,7 @@
 								<!-- Hidden content for Magnific Popup -->
 								<div id="content-ET-CLIP" class="mfp-hide">
 									<img src="images/et-clip.jpg" alt="Pre-trained CLIP Encoder for Embodied Instruction Following in ALFRED" style="width: 50%;" /> 
-									<h3>Pre-trained CLIP Encoder for Embodied Instruction Following in ALFRED
+									<h3>Pre-trained CLIP Encoder for Embodied Instruction Following in ALFRED <br>
 										<a href="https://embodied-ai.org/papers/2022/20.pdf" target="_blank">[Paper]</a>
 									</h3>
 									<p><u><b>Abstract:</b></u> We introduce a method employing pre-trained CLIP encoders to enhance model generalization in the ALFRED task. In contrast to previous literature where CLIP replaces the visual encoder, we suggest using CLIP as an additional module through an auxiliary object detection objective. We validate our method on the recently proposed Episodic Transformer architecture and demonstrate that incorporating CLIP improves task performance on the unseen validation set. Additionally, our analysis results support that CLIP especially helps with leveraging object descriptions, detecting small objects, and interpreting rare words.</p>
@@ -140,7 +269,7 @@
 								<!-- Hidden content for Magnific Popup -->
 								<div id="content-neuroinformatics" class="mfp-hide">
 									<img src="images/neuroinformatics.jpg" alt="Automatic Brain Pathology Analysis for Traumatic Brain Injury" style="width: 45%;" /> 
-									<h3>Automatic Brain Pathology Analysis for Traumatic Brain Injury
+									<h3>Automatic Brain Pathology Analysis for Traumatic Brain Injury <br>
 										<a href="https://link.springer.com/article/10.1007/s12021-018-9405-x" target="_blank">[Paper]</a>
 									</h3>
 									<p><u><b>Abstract:</b></u> Traumatic brain injury (TBI) is one of the leading causes of death and disability worldwide. Detailed studies of the microglial response after TBI require high throughput quantification of changes in microglial count and morphology in histological sections throughout the brain. In this paper, we present a fully automated end-to-end system that is capable of assessing microglial activation in white matter regions on whole slide images of Iba1 stained sections. Our approach involves the division of the full brain slides into smaller image patches that are subsequently automatically classified into white and grey matter sections. On the patches classified as white matter, we jointly apply functional minimization methods and deep learning classification to identify Iba1-immunopositive microglia. Detected cells are then automatically traced to preserve their complex branching structure after which fractal analysis is applied to determine the activation states of the cells. The resulting system detects white matter regions with 84% accuracy, detects microglia with a performance level of 0.70 (F1 score, the harmonic mean of precision and sensitivity) and performs binary microglia morphology classification with a 70% accuracy. This automated pipeline performs these analyses at a 20-fold increase in speed when compared to a human pathologist. Moreover, we have demonstrated robustness to variations in stain intensity common for Iba1 immunostaining. A preliminary analysis was conducted that indicated that this pipeline can identify differences in microglia response due to TBI. An automated solution to microglia cell analysis can greatly increase standardized analysis of brain slides, allowing pathologists and neuroscientists to focus on characterizing the associated underlying diseases and injuries.</p>
@@ -153,10 +282,52 @@
 						</ul> -->
 
 					    <!-- Start of Papers Subsection -->
+						<div id="working-papers-subsection">
+							<h3>Working Papers</h3>
+							<table class="working-papers-table">
+								<tbody>
+									<tr>
+										<td class="year">2025</td>
+										<td>
+											<a href="#" class="inactiveLink" target="_blank">Transformers tend to memorize geometrically; it is unclear why.</a>,
+											<span class="venue">[Link Available Soon]</span>
+											<span> - S. Noroozizadeh, V. Nagarajan, E. Rosenfeld, S. Kumar</span>
+										</td>
+									</tr>
+									<tr>
+										<td class="year">2025</td>
+										<td>
+											<a href="#" class="inactiveLink" target="_blank">SurvHTE-Bench: A Benchmark for Heterogeneous Treatment Effect Estimation in Survival Analysis</a>,
+											<span class="venue">[Link Available Soon]</span>
+											<a href="https://github.com/Shahriarnz14/SurvHTE-Benchmark" target="_blank">[Data & Code]</a>,
+											<span> - S. Noroozizadeh *, X. Shen *, J. Weiss, G. Chen</span>
+										</td>
+									</tr>
+									<!-- Add more rows for more papers -->
+								</tbody>
+							</table>
+						</div>
+
 						<div id="papers-subsection">
 							<h3>Publications</h3>
 							<table class="papers-table">
 								<tbody>
+									<tr>
+										<td class="year">2025</td>
+										<td>
+											<a href="https://proceedings.mlr.press/v287/noroozizadeh25a.html" target="_blank">The Impact of Medication Non-adherence on Adverse Outcomes: Evidence from Schizophrenia Patients via Survival Analysis</a> <a href="https://github.com/Shahriarnz14/causal-meta-learner-survival-analysis">[Code]</a>,
+											<span class="venue">Conference on Health, Inference, and Learning (CHIL) 2025</span>
+											<span> - S. Noroozizadeh, P. Welle, J. Weiss, G. Chen</span>
+										</td>
+									</tr>
+									<tr>
+										<td class="year">2025</td>
+										<td>
+											<a href="https://academic.oup.com/nar/article/53/3/gkaf044/7997216" target="_blank">mRNA-LM: full-length integrated SLM for mRNA analysis</a> <a href="https://github.com/Sanofi-Public/mRNA-LM">[Code]</a>,
+											<span class="venue">Nucleic Acids Research</span>
+											<span> - S. Li, S. Noroozizadeh, S. Moayedpour, L. Kogler-Anele, Z. Xue, D. Zheng, F. Ulloa Montoya, V. Agarwal, Z. Bar-Joseph, S. Jager</span>
+										</td>
+									</tr>
 									<tr>
 										<td class="year">2024</td>
 										<td>
@@ -201,6 +372,40 @@
 								</tbody>
 							</table>
 						</div>
+
+
+						<div id="papers-preprint-subsection">
+							<h3>Preprints</h3>
+							<table class="papers-preprint-table">
+								<tbody>
+									<tr>
+										<td class="year">2025</td>
+										<td>
+											<a href="https://arxiv.org/abs/2505.20323" target="_blank">PMOA-TTS: Introducing the PubMed Open Access Textual Times Series Corpus</a> <a href="https://huggingface.co/datasets/snoroozi/pmoa-tts">[Data]</a>,
+											<span class="venue">ArXiv</span>
+											<span> - S. Noroozizadeh *, S. Kumar *, G. Chen, J. Weiss</span>
+										</td>
+									</tr>
+									<tr>
+										<td class="year">2025</td>
+										<td>
+											<a href="https://arxiv.org/abs/2504.10340" target="_blank">Forecasting Clinical Risk from Textual Time Series: Structuring Narratives for Temporal AI in Healthcare</a> <a href="https://github.com/Shahriarnz14/Textual-Time-Series-Forecasting" target="_blank">[Code]</a>,
+											<span class="venue">ArXiv</span>
+											<span> - S. Noroozizadeh *, S. Kumar *, J. Weiss</span>
+										</td>
+									</tr>
+									<tr>
+										<td class="year">2025</td>
+										<td>
+											<a href="https://arxiv.org/abs/2504.12326" target="_blank">Reconstructing sepsis trajectories from clinical case reports using LLMs: the textual time series corpus for sepsis</a>,
+											<span class="venue">ArXiv</span>
+											<span> - S. Noroozizadeh, J. Weiss</span>
+										</td>
+									</tr>
+									<!-- Add more rows for more papers -->
+								</tbody>
+							</table>
+						</div>
 						<!-- End of Papers Subsection -->
 
 
@@ -237,12 +442,13 @@
 								<h3>Teaching Experience</h3>
 								<ul class="teaching-list">
 									<!-- Add your teaching experiences here. Example: -->
+									<li><b>[2024]</b> PhD Probabilistic Graphical Models, CMU</li>
 									<li><b>[2023]</b> Machine Learning for Problem Solving, CMU</li>
-									<li><b>[2023, 2022]</b> Unstructured Data Analytics, CMU</li>
-									<li><b>[2023, 2022]</b> PhD Microeconomics, CMU</li>
+									<li><b>[2022 - 2023]</b> Unstructured Data Analytics, CMU</li>
+									<li><b>[2022 - 2025]</b> PhD Microeconomics, CMU</li>
 									<li><b>[2020]</b> Neural Signal Processing, CMU</li>
 									<li><b>[2020]</b> Fundamentals of Computational BME, CMU</li>
-									<li><b>[2017, 2016]</b> Algorithms and Data Structures, UBC</li>
+									<li><b>[2016 - 2017]</b> Algorithms and Data Structures, UBC</li>
 									<li><b>[2014]</b> Computer Science Fundamentals, UBC</li>
 									<!-- ... -->
 								</ul>
@@ -253,8 +459,11 @@
 							<div class="column half services">
 								<h3>Services</h3>
 								<ul class="services-list">
-									<li><b>[2023]</b> Reviewer, ICLR</li>
-									<li><b>[2023]</b> Reviewer, NeurIPS</li>
+									<li><b>[2023, 2024, 2025]</b> Reviewer, ICLR</li>
+									<li><b>[2023, 2024, 2025]</b> Reviewer, NeurIPS</li>
+									<li><b>[2023, 2024, 2025]</b> Reviewer, ML4H</li>
+									<li><b>[2023, 2024, 2025]</b> Reviewer, CHIL</li>
+									<li><b>[2025]</b> Reviewer, MLHC</li>
 									<li><b>[2023]</b> Reviewer, AAAI</li>
 									<!-- ... -->
 								</ul>
@@ -273,15 +482,36 @@
 					<div class="row">
 						<article class="col-6 col-12-xsmall work-item">
 							<!-- Visible content for users -->
+							<a href="#content-google-research" class="image fit thumb mfp-inline">
+								<img src="images/Google-Research.webp" alt="Google Research (BigML)" />
+							</a>
+							<h3>Google Research (New York, NY)</h3>
+							<p>Doctoral Researcher</p>
+							
+							<!-- Hidden content for Magnific Popup -->
+							<div id="content-google-research" class="mfp-hide">
+								<img src="images/Google-Research.webp" alt="Google Research (BigML)" style="width: 20%;" />
+								<!-- <h3>Microsoft</h3> -->
+								<p><u><b>A.I. PhD Student Researcher [2025]:</b></u> 
+									• Isolated a clean and analyzable instance of implicit in-weights reasoning in Transformers, demonstrating that their memory is better characterized by global geometric structure rather than purely local associative storage. <br>
+									• Provided both empirical and theoretical evidence connecting this emergent geometric memory to spectral bias in Node2Vec-style dynamics, offering new insights into how Transformers generalize beyond local associations. <br>
+									• Investigating the sufficiency of next-token prediction (NTP) as a training paradigm for large language models, and analyzing alternative multi-token objectives to enable deeper reasoning. <br>
+									• Combining theoretical and empirical analysis in controlled synthetic settings and downstream language tasks to identify representational and learning bottlenecks inherent to NTP. <br>
+									• Designing and executing large-scale experiments leveraging Google’s compute infrastructure, aiming to refine methods and produce publishable advances in sequence modeling objectives for language models. <br>
+								</p>
+							</div>
+						</article>
+						<article class="col-6 col-12-xsmall work-item">
+							<!-- Visible content for users -->
 							<a href="#content-sanofi" class="image fit thumb mfp-inline">
-								<img src="images/sanofi.jpg" alt="Sanofi" />
+								<img src="images/sanofi-logo.jpeg" alt="Sanofi" />
 							</a>
 							<h3>Sanofi (Cambridge, MA)</h3>
 							<p>Artificial Intelligence Research Scientist Intern</p>
 							
 							<!-- Hidden content for Magnific Popup -->
 							<div id="content-sanofi" class="mfp-hide">
-								<img src="images/sanofi.jpg" alt="Sanofi" style="width: 20%;" />
+								<img src="images/sanofi-logo.jpeg" alt="Sanofi" style="width: 20%;" />
 								<!-- <h3>Microsoft</h3> -->
 								<p><u><b>A.I. Research Scientist Intern [2024]:</b></u> 
 									• Co-led the development of the mRNA-LM model, a language model built from scratch and pretrained on millions of full-length mRNA sequences, achieving state-of-the-art performance on various mRNA prediction tasks, including structure prediction, localization, and translation efficiency. <br>
@@ -462,10 +692,16 @@
 					
 					<div id="news-content">
 						<ul>
+							<li><span><b>[September 2025]</b></span> Paper accepted to NeurIPS 2025 Workshop on Foundations of Reasoning in Language Models! <a href="#" class="inactiveLink" target="_blank"> [Paper Link Available Soon]</a> </li>
+							<li><span><b>[May 2025]</b></span> Spending Summer and Fall 2025 as an AI PhD Researcher at <a href="https://research.google/">Google Research</a>! <br> Investigating how next-token learners reason and memorize.
+							<li><span><b>[April 2025]</b></span> Causal Survival-Analysis Paper accepted to Conference on Health, Inference, and Learning (CHIL)!<a href="https://arxiv.org/abs/2506.18187">[Paper]</a> <a href="https://github.com/Shahriarnz14/causal-meta-learner-survival-analysis">[Code]</a> </li>
+							<li><span><b>[March 2025]</b></span> ML-Driven Glucose Prediction Paper accepted to Biosensors Journal! (Collaboration with Pardis Sadeghi)<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11940286/">[Paper]</a> </li>
+							<li><span><b>[February 2025]</b></span> First Patent published for predicting mRNA properties using Large Language Models! (Work from Sanofi's Internship)<a href="https://patents.google.com/patent/WO2025026948A1">[Paper]</a> <a href="https://github.com/Sanofi-Public/mRNA-LM">[Code]</a> </li>
+							<li><span><b>[January 2025]</b></span> mRNA-LM Paper accepted to Nucleic Acids Research (NAR) Journal! (Work from Sanofi's Internship)<a href="https://academic.oup.com/nar/article/53/3/gkaf044/7997216">[Paper]</a> <a href="https://github.com/Sanofi-Public/mRNA-LM">[Code]</a> </li>
 							<li><span><b>[Sep 2024]</b></span> Awarded Tata Consultancy Services (TCS) Presidential Fellowship</li>
 							<li><span><b>[May 2024]</b></span> Spending Summer 2024 as an AI Research Scientist Intern at <a href="https://jobs.sanofi.com/en/ai-coe">Sanofi Inc.</a> </li>
-							<li><span><b>[Apr 2024]</b></span> Paper accepted to SemEval-2024 at NAACL!<a href="https://arxiv.org/abs/2404.09136">[Paper]</a> <a href="https://github.com/Shahriarnz14/TLDR-T5-generated-clinical-Language-for-DeBERTa-Report-Analysis">[Code]</a> </li>
-							<li><span><b>[Nov 2023]</b></span> Paper accepted to Machine Learning for Health (ML4H) Conference!<a href="https://arxiv.org/abs/2312.05933">[Paper]</a> <a href="https://github.com/Shahriarnz14/Temporal-Supervised-Contrastive-Learning">[Code]</a> </li>
+							<li><span><b>[Apr 2024]</b></span> TLDR Paper accepted to SemEval-2024 at NAACL!<a href="https://arxiv.org/abs/2404.09136">[Paper]</a> <a href="https://github.com/Shahriarnz14/TLDR-T5-generated-clinical-Language-for-DeBERTa-Report-Analysis">[Code]</a> </li>
+							<li><span><b>[Nov 2023]</b></span> Temporal-SCL Paper accepted to Machine Learning for Health (ML4H) Conference!<a href="https://arxiv.org/abs/2312.05933">[Paper]</a> <a href="https://github.com/Shahriarnz14/Temporal-Supervised-Contrastive-Learning">[Code]</a> </li>
 							<li><span><b>[Sep 2023]</b></span> Awarded Natural Sciences and Engineering Research Council of Canada (NSERC) CGS-D/PGS-D Fellowship</li>
 							<li><span><b>[May 2023]</b></span> Awarded best first paper award at Heinz</li>
 							<li><span><b>[Feb 2023]</b></span> Oral Presentation at AAAI'23 Representation Learning for Responsible Human-Centric AI 
