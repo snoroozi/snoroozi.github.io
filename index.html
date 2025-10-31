@@ -92,10 +92,12 @@
 								<div id="content-transformer-geometry" class="mfp-hide">
 									<img src="images/Overview_Geometric_Models_Path_Star.jpeg" alt="Deep sequence models tend to memorize geometrically; it is unclear why." style="width: 50%;" /> 
 									<h3>Deep sequence models tend to memorize geometrically; it is unclear why. <br>
-										<a href="#" class="inactiveLink" target="_blank"> [Preprint Link Available Soon]</a>
+										<a href="https://arxiv.org/pdf/2510.26745" target="_blank"> [Preprint: ArXiv]</a>
 										<!-- <a href="" target="_blank">[Code]</a> -->
 									</h3>
-									<p><u><b>Abstract:</b></u> We present a clean and analyzable phenomenon that contrasts the predominant associative view of Transformer memory with a nascent geometric view. Concretely, we present an in-weights path-finding task where a next-token learner succeeds in planning ahead, despite the task being adversarially constructed. This observation is incompatible with memory as strictly a storage of local associations; instead, training with gradient descent must have synthesized a geometry of global relationships from witnessing mere local associations. While such a geometric memory may seem intuitive in hindsight, we argue that its emergence cannot be easily explained by various pressures, be it statistical, or architectural, or supervisory. To make sense of this, we draw a connection to an open question in the simpler Node2Vec algorithm, and we provide empirical clues to a closed-form solution for what graph embeddings are learned. Our insight is that global geometry arises from a spectral bias that--in contrast to prevailing intuition--does not require low dimensionality of the embeddings. Our study raises open questions concerning implicit reasoning and the bias of gradient-based memorization, while offering a simple example for analysis. Our findings also call for revisiting theoretical abstractions of parametric memory in Transformers.
+									<p><u><b>Abstract:</b></u> In sequence modeling, the parametric memory of atomic facts has been predominantly abstracted as a brute-force lookup of co-occurrences between entities. We contrast this associative view against a geometric view of how memory is stored. We begin by isolating a clean and analyzable instance of Transformer reasoning that is incompatible with memory as strictly a storage of the local co-occurrences specified during training. Instead, the model must have somehow synthesized its own geometry of atomic facts, encoding global relationships between all entities, including non-co-occurring ones. This in turn has simplified a hard reasoning task involving an ℓ-fold composition into an easy-to-learn 1-step geometric task.<br>
+									From this phenomenon, we extract fundamental aspects of neural embedding geometries that are hard to explain. We argue that the rise of such a geometry, despite optimizing over mere local associations, cannot be straightforwardly attributed to typical architectural or optimizational pressures. Counterintuitively, an elegant geometry is learned even when it is not more succinct than a brute-force lookup of associations. <br>
+									Then, by analyzing a connection to Node2Vec, we demonstrate how the geometry stems from a spectral bias that -- in contrast to prevailing theories -- indeed arises naturally despite the lack of various pressures. This analysis also points to practitioners a visible headroom to make Transformer memory more strongly geometric. We hope the geometric view of parametric memory encourages revisiting the default intuitions that guide researchers in areas like knowledge acquisition, capacity, discovery and unlearning.
 									</p>
 								</div>
 							</article>
@@ -296,8 +298,8 @@
 									<tr>
 										<td class="year">2025</td>
 										<td>
-											<a href="#" class="inactiveLink" target="_blank">Deep sequence models tend to memorize geometrically; it is unclear why.</a>,
-											<span class="venue">[Link Available Soon]</span>
+											<a href="https://arxiv.org/pdf/2510.26745" target="_blank">Deep sequence models tend to memorize geometrically; it is unclear why.</a>,
+											<span class="venue">[Under Review]</span>
 											<span> - S. Noroozizadeh, V. Nagarajan, E. Rosenfeld, S. Kumar</span>
 										</td>
 									</tr>
@@ -702,11 +704,11 @@
 					
 					<div id="news-content">
 						<ul>
-							<li><span><b>[September 2025]</b></span> Paper accepted to NeurIPS 2025 Workshop on Foundations of Reasoning in Language Models! <a href="#" class="inactiveLink" target="_blank"> [Paper Link Available Soon]</a> </li>
-							<li><span><b>[May 2025]</b></span> Spending Summer and Fall 2025 as an AI PhD Researcher at <a href="https://research.google/">Google Research</a>! <br> Investigating how next-token learners reason and memorize.
+							<li><span><b>[September 2025]</b></span> Paper accepted to NeurIPS 2025 Workshop on Foundations of Reasoning in Language Models! <a href="#" class="inactiveLink" target="_blank"> [Paper Link Available Soon]</a> <a href="https://arxiv.org/pdf/2510.26745" target="_blank">[ArXiv]</a> </li>
+							<li><span><b>[May 2025]</b></span> Spending Summer and Fall 2025 in the beautiful NYC as an AI PhD Researcher at <a href="https://research.google/">Google Research</a> hosted by <a href="https://vaishnavh.github.io/" target="_blank">Vaishnavh Nagarajan</a>! Investigating how next-token learners reason and memorize.
 							<li><span><b>[April 2025]</b></span> Causal Survival-Analysis Paper accepted to Conference on Health, Inference, and Learning (CHIL)!<a href="https://arxiv.org/abs/2506.18187">[Paper]</a> <a href="https://github.com/Shahriarnz14/causal-meta-learner-survival-analysis">[Code]</a> </li>
 							<li><span><b>[March 2025]</b></span> ML-Driven Glucose Prediction Paper accepted to Biosensors Journal! (Collaboration with Pardis Sadeghi)<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11940286/">[Paper]</a> </li>
-							<li><span><b>[February 2025]</b></span> First Patent published for predicting mRNA properties using Large Language Models! (Work from Sanofi's Internship)<a href="https://patents.google.com/patent/WO2025026948A1">[Paper]</a> <a href="https://github.com/Sanofi-Public/mRNA-LM">[Code]</a> </li>
+							<li><span><b>[February 2025]</b></span> First Patent published for predicting mRNA properties using Large Language Models! (Work from Sanofi's Internship)<a href="https://patents.google.com/patent/WO2025026948A1">[Patent]</a> </li>
 							<li><span><b>[January 2025]</b></span> mRNA-LM Paper accepted to Nucleic Acids Research (NAR) Journal! (Work from Sanofi's Internship)<a href="https://academic.oup.com/nar/article/53/3/gkaf044/7997216">[Paper]</a> <a href="https://github.com/Sanofi-Public/mRNA-LM">[Code]</a> </li>
 							<li><span><b>[Sep 2024]</b></span> Awarded Tata Consultancy Services (TCS) Presidential Fellowship</li>
 							<li><span><b>[May 2024]</b></span> Spending Summer 2024 as an AI Research Scientist Intern at <a href="https://jobs.sanofi.com/en/ai-coe">Sanofi Inc.</a> </li>
