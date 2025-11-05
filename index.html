@@ -132,7 +132,7 @@
 								<div id="content-TTS-Forecast" class="mfp-hide">
 									<img src="images/TTS-Forecasts.png" alt="Forecasting Clinical Risk from Textual Time Series" style="width: 50%;" /> 
 									<h3>Forecasting Clinical Risk from Textual Time Series: Structuring Narratives for Temporal AI in Healthcare <br>
-										<a href="https://arxiv.org/abs/2504.10340" target="_blank">[Preprint: ArXiv]</a>
+										<a href="https://arxiv.org/abs/2504.10340" target="_blank">[Paper: AAAI-2026]</a>
 										<a href="https://github.com/Shahriarnz14/Textual-Time-Series-Forecasting" target="_blank">[Code]</a>
 									</h3>
 									<p><u><b>Abstract:</b></u> Clinical case reports encode rich, temporal patient trajectories that are often underexploited by traditional machine learning methods relying on structured data. In this work, we introduce the forecasting problem from textual time series, where timestamped clinical findings -- extracted via an LLM-assisted annotation pipeline -- serve as the primary input for prediction. We systematically evaluate a diverse suite of models, including fine-tuned decoder-based large language models and encoder-based transformers, on tasks of event occurrence prediction, temporal ordering, and survival analysis. Our experiments reveal that encoder-based models consistently achieve higher F1 scores and superior temporal concordance for short- and long-horizon event forecasting, while fine-tuned masking approaches enhance ranking performance. In contrast, instruction-tuned decoder models demonstrate a relative advantage in survival analysis, especially in early prognosis settings. Our sensitivity analyses further demonstrate the importance of time ordering, which requires clinical time series construction, as compared to text ordering, the format of the text inputs that LLMs are classically trained on. This highlights the additional benefit that can be ascertained from time-ordered corpora, with implications for temporal tasks in the era of widespread LLM use.
@@ -322,6 +322,14 @@
 							<table class="papers-table">
 								<tbody>
 									<tr>
+										<td class="year">2026</td>
+										<td>
+											<a href="https://arxiv.org/pdf/2504.10340" target="_blank">Forecasting Clinical Risk from Textual Time Series: Structuring Narratives for Temporal AI in Healthcare</a> <a href="https://github.com/Shahriarnz14/Textual-Time-Series-Forecasting" target="_blank">[Code]</a>,
+											<span class="venue">Proceedings of the AAAI Conference on Artificial Intelligence 2026 (AI for Social Impact Track)</span>
+											<span> - S. Noroozizadeh *, S. Kumar *, J. Weiss</span>
+										</td>
+									</tr>
+									<tr>
 										<td class="year">2025</td>
 										<td>
 											<a href="https://proceedings.mlr.press/v287/noroozizadeh25a.html" target="_blank">The Impact of Medication Non-adherence on Adverse Outcomes: Evidence from Schizophrenia Patients via Survival Analysis</a> <a href="https://github.com/Shahriarnz14/causal-meta-learner-survival-analysis">[Code]</a>,
@@ -393,14 +401,6 @@
 											<a href="https://arxiv.org/abs/2505.20323" target="_blank">PMOA-TTS: Introducing the PubMed Open Access Textual Times Series Corpus</a> <a href="https://huggingface.co/datasets/snoroozi/pmoa-tts">[Data]</a>,
 											<span class="venue">ArXiv</span>
 											<span> - S. Noroozizadeh *, S. Kumar *, G. Chen, J. Weiss</span>
-										</td>
-									</tr>
-									<tr>
-										<td class="year">2025</td>
-										<td>
-											<a href="https://arxiv.org/pdf/2504.10340" target="_blank">Forecasting Clinical Risk from Textual Time Series: Structuring Narratives for Temporal AI in Healthcare</a> <a href="https://github.com/Shahriarnz14/Textual-Time-Series-Forecasting" target="_blank">[Code]</a>,
-											<span class="venue">ArXiv</span>
-											<span> - S. Noroozizadeh *, S. Kumar *, J. Weiss</span>
 										</td>
 									</tr>
 									<tr>
@@ -503,7 +503,7 @@
 								<!-- <h3>Microsoft</h3> -->
 								<p><u><b>A.I. PhD Student Researcher [2025]:</b></u> 
 									• Isolated a clean and analyzable instance of implicit in-weights reasoning in Transformers, demonstrating that their memory is better characterized by global geometric structure rather than purely local associative storage. <br>
-									• Provided both empirical and theoretical evidence connecting this emergent geometric memory to spectral bias in Node2Vec-style dynamics, offering new insights into how Transformers generalize beyond local associations. <br>
+									• Provided both empirical and theoretical evidence connecting this emergent geometric memory to spectral bias in Node2Vec-style dynamics, offering new insights into how Transformers generalize beyond local associations. <a href="https://arxiv.org/abs/2510.26745" target="_blank">[Paper]</a> <i> – Under Review</i> <br>
 									• Investigating the sufficiency of next-token prediction (NTP) as a training paradigm for large language models, and analyzing alternative multi-token objectives to enable deeper reasoning. <br>
 									• Combining theoretical and empirical analysis in controlled synthetic settings and downstream language tasks to identify representational and learning bottlenecks inherent to NTP. <br>
 									• Designing and executing large-scale experiments leveraging Google’s compute infrastructure, aiming to refine methods and produce publishable advances in sequence modeling objectives for language models. <br>
@@ -585,7 +585,7 @@
 							<h3>Many-Shot In-Context Learning for Molecular Inverse Design</h3>
 							<div id="content-manyShot_ICL" class="mfp-hide popup-content">
 								<img src="images/ManyShotICL.jpg" alt="" style="width: 50%;" />
-								<h3>Many-Shot In-Context Learning for Molecular Inverse Design </h3>
+								<h3>Many-Shot In-Context Learning for Molecular Inverse Design <a href="https://arxiv.org/abs/2407.19089">[Paper]</a></h3>
 								<p> Large Language Models (LLMs) have demonstrated great performance in few-shot In-Context Learning (ICL) for a variety of generative and discriminative chemical design tasks. The newly expanded context windows of LLMs can further improve ICL capabilities for molecular inverse design and lead optimization. To take full advantage of these capabilities we developed a new semi-supervised learning method that overcomes the lack of experimental data available for many-shot ICL. Our approach involves iterative inclusion of LLM generated molecules with high predicted performance, along with experimental data. We further integrated our method in a multi-modal LLM which allows for the interactive modification of generated molecular structures using text instructions. As we show, the new method greatly improves upon existing ICL methods for molecular design while being accessible and easy to use for scientists.</p>
 							</div>
 						</article>
@@ -611,7 +611,7 @@
 							<h3>Model-Based Reinforcement Learning with Probabilistic Ensemble and Trajectory Sampling</h3>
 							<div id="content-PETS_MBRL" class="mfp-hide popup-content">
 								<img src="images/PETS_MBRL.jpg" alt="" style="width: 50%;" />
-								<h3>Model-Based Reinforcement Learning with Probabilistic Ensemble and Trajectory Sampling (PETS)</h3>
+								<h3>Model-Based Reinforcement Learning with Probabilistic Ensemble and Trajectory Sampling (PETS) <a href="https://github.com/Shahriarnz14/Model-Based-RL-with-Probabilistic-Ensemble-and-Trajectory-Sampling">[Code]</a></h3>
 								<p>Implemented the PETS algorithm as a model-based RL method to solve the Pusher environment of OpenAI-Gym for a robotic arm to push an object to reach to a randomly positioned goal location: <br>
 									(i) Using probabilistic ensemble of neural networks outputting distribution over the resulting states given a state and action pair. <br>
 									(ii) Propagate hallucinated trajectories through time by passing hypothetical state-action pairs through different networks of the ensemble. <br>
@@ -627,7 +627,7 @@
 							<h3>Semi-Supervised Support Vector Machine (S3VM)</h3>
 							<div id="content-S3VM" class="mfp-hide popup-content">
 								<img src="images/S3VM.jpg" alt="" style="width: 50%;" />
-								<h3>Semi-Supervised Support Vector Machine (S3VM)</h3>
+								<h3>Semi-Supervised Support Vector Machine (S3VM) <a href="https://github.com/Shahriarnz14/Semi-Supervised-Support-Vector-Machine-S3VM">[Code]</a></h3>
 								<p>Developed a self-training scheme with SVM to improve classification accuracy of the training data when only a small subset is labeled. Additionally, implemented a quasi- Newton method Semisupervised Support Vector Machine (S3VM). Applied these two techniques for the task of image classification of MNIST and CIFAR10 datasets. Showed significant improvement in classification accuracy in the range that only 30%-50% of data is labeled as compared to conventional SVM. </p>
 							</div>
 						</article>
@@ -683,7 +683,7 @@
 							<h3>Rescue-Bot: BatBot Rescuing Pets from Fire</h3>
 							<div id="content-batbot" class="mfp-hide popup-content">
 								<img src="images/batbot.jpg" alt="" style="width: 50%;" />
-								<h3>Rescue-Bot: BatBot Rescuing Pets from a Building on Fire</h3>
+								<h3>Rescue-Bot: BatBot Rescuing Pets from a Building on Fire <a href="https://github.com/Shahriarnz14/Batbot">[Code]</a></h3>
 								<p>Fully designed, built, and tested an autonomous robot 6 pets and managed to finish the competition as the quarter-finalist among 16 teams. 500+ hours of work on: <br> 
 									<u><b>Implemented more than 2000 lines of C++ code</b></u> including control algorithms for the drive system and the robotic arm.
 									<u><b>Designed and built circuits</b></u> such as H-bridge (run motors), IR receiver circuit (to find the last two pets, and find the way back), Pulse-Width Modulation circuit (to feed the motors), and various signal filters.
@@ -704,12 +704,13 @@
 					
 					<div id="news-content">
 						<ul>
-							<li><span><b>[September 2025]</b></span> Paper accepted to NeurIPS 2025 Workshop on Foundations of Reasoning in Language Models! <a href="#" class="inactiveLink" target="_blank"> [Paper Link Available Soon]</a> <a href="https://arxiv.org/abs/2510.26745" target="_blank">[ArXiv]</a> </li>
+							<li><span><b>[Nov 2025]</b></span> Forecasting Textual Time Series Paper accepted to AAAI-2026! <a href="https://arxiv.org/abs/2504.10340">[Paper]</a> <a href="https://github.com/Shahriarnz14/Textual-Time-Series-Forecasting">[Code]</a> </li>
+							<li><span><b>[Sep 2025]</b></span> Geometric Memory Paper accepted to NeurIPS 2025 Workshop on Foundations of Reasoning in Language Models! <a href="#" class="inactiveLink" target="_blank"> [Link Available Soon]</a> <a href="https://arxiv.org/abs/2510.26745" target="_blank">[ArXiv]</a> </li>
 							<li><span><b>[May 2025]</b></span> Spending Summer and Fall 2025 in the beautiful NYC as an AI PhD Researcher at <a href="https://research.google/">Google Research</a> hosted by <a href="https://vaishnavh.github.io/" target="_blank">Vaishnavh Nagarajan</a>! Investigating how next-token learners reason and memorize.
-							<li><span><b>[April 2025]</b></span> Causal Survival-Analysis Paper accepted to Conference on Health, Inference, and Learning (CHIL)!<a href="https://arxiv.org/abs/2506.18187">[Paper]</a> <a href="https://github.com/Shahriarnz14/causal-meta-learner-survival-analysis">[Code]</a> </li>
+							<li><span><b>[Apr 2025]</b></span> Causal Survival-Analysis Paper accepted to Conference on Health, Inference, and Learning (CHIL)!<a href="https://arxiv.org/abs/2506.18187">[Paper]</a> <a href="https://github.com/Shahriarnz14/causal-meta-learner-survival-analysis">[Code]</a> </li>
 							<li><span><b>[March 2025]</b></span> ML-Driven Glucose Prediction Paper accepted to Biosensors Journal! (Collaboration with Pardis Sadeghi)<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11940286/">[Paper]</a> </li>
-							<li><span><b>[February 2025]</b></span> First Patent published for predicting mRNA properties using Large Language Models! (Work from Sanofi's Internship)<a href="https://patents.google.com/patent/WO2025026948A1">[Patent]</a> </li>
-							<li><span><b>[January 2025]</b></span> mRNA-LM Paper accepted to Nucleic Acids Research (NAR) Journal! (Work from Sanofi's Internship)<a href="https://academic.oup.com/nar/article/53/3/gkaf044/7997216">[Paper]</a> <a href="https://github.com/Sanofi-Public/mRNA-LM">[Code]</a> </li>
+							<li><span><b>[Feb 2025]</b></span> First Patent published for predicting mRNA properties using Large Language Models! (Work from Sanofi's Internship)<a href="https://patents.google.com/patent/WO2025026948A1">[Patent]</a> </li>
+							<li><span><b>[Jan 2025]</b></span> mRNA-LM Paper accepted to Nucleic Acids Research (NAR) Journal! (Work from Sanofi's Internship)<a href="https://academic.oup.com/nar/article/53/3/gkaf044/7997216">[Paper]</a> <a href="https://github.com/Sanofi-Public/mRNA-LM">[Code]</a> </li>
 							<li><span><b>[Sep 2024]</b></span> Awarded Tata Consultancy Services (TCS) Presidential Fellowship</li>
 							<li><span><b>[May 2024]</b></span> Spending Summer 2024 as an AI Research Scientist Intern at <a href="https://jobs.sanofi.com/en/ai-coe">Sanofi Inc.</a> </li>
 							<li><span><b>[Apr 2024]</b></span> TLDR Paper accepted to SemEval-2024 at NAACL!<a href="https://arxiv.org/abs/2404.09136">[Paper]</a> <a href="https://github.com/Shahriarnz14/TLDR-T5-generated-clinical-Language-for-DeBERTa-Report-Analysis">[Code]</a> </li>
