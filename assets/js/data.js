@@ -4,24 +4,33 @@
 
 // ─── Area tag config ───────────────────────────────────────────────
 const AREA_TAGS = {
-  'Sequence Models':       { color: '#6366f1', abbr: 'Seq'     },
-  'Healthcare':            { color: '#10b981', abbr: 'Health'  },
-  'Causal':                { color: '#f59e0b', abbr: 'Causal'  },
-  'Neuro/Biomedical AI':   { color: '#8b5cf6', abbr: 'Neuro'   },
-  'Representation Learning':{ color: '#0ea5e9', abbr: 'Repr'   },
+  'Deep Sequence Modeling':              { color: '#6366f1', abbr: 'Seq',       key: 'seq'    },
+  'Healthcare AI':                       { color: '#10b981', abbr: 'Health',    key: 'health' },
+  'Causal Inference / Survival Analysis':{ color: '#f59e0b', abbr: 'Causal',   key: 'causal' },
+  'Neuro/Biomedical AI':                 { color: '#8b5cf6', abbr: 'Neuro',     key: 'neuro'  },
+  'Representation Learning':             { color: '#0ea5e9', abbr: 'Repr',      key: 'repr'   },
+  'Multimodal Machine Learning':         { color: '#22d3ee', abbr: 'Multimodal',key: 'multi'  },
+  'Agentic':                             { color: '#a78bfa', abbr: 'Agentic',   key: 'agentic'},
 };
 
-// ─── Venue badge config ────────────────────────────────────────────
+// ─── Venue badge config (tier: published|workshop|preprint) ────────
 const VENUE_BADGES = {
-  'ICLR':     { color: '#a78bfa' },
-  'AAAI':     { color: '#34d399' },
-  'CHIL':     { color: '#38bdf8' },
-  'NAR':      { color: '#fb923c' },
-  'ML4H':     { color: '#4ade80' },
-  'Workshop': { color: '#94a3b8' },
-  'Preprint': { color: '#64748b' },
-  'NAACL':    { color: '#f472b6' },
-  'Journal':  { color: '#fb923c' },
+  // Published — near-white
+  'ICLR':               { color: '#e2e8f0', tier: 'published' },
+  'ICML':               { color: '#e2e8f0', tier: 'published' },
+  'AAAI':               { color: '#e2e8f0', tier: 'published' },
+  'CHIL':               { color: '#e2e8f0', tier: 'published' },
+  'NAR':                { color: '#e2e8f0', tier: 'published' },
+  'ML4H':               { color: '#e2e8f0', tier: 'published' },
+  'Journal':            { color: '#e2e8f0', tier: 'published' },
+  // Workshop — medium gray
+  'NAACL-SemEval':      { color: '#94a3b8', tier: 'workshop'  },
+  'CVPR-Embodied AI':   { color: '#94a3b8', tier: 'workshop'  },
+  'NeurIPS-FoRLM':      { color: '#94a3b8', tier: 'workshop'  },
+  'AAAI-R2HCAI':        { color: '#94a3b8', tier: 'workshop'  },
+  // Preprint / Fellowship — dark gray
+  'Preprint':           { color: '#64748b', tier: 'preprint'  },
+  'CMLH-Fellowship':    { color: '#64748b', tier: 'preprint'  },
 };
 
 // ─── Recent Research / Publications ───────────────────────────────
@@ -30,14 +39,15 @@ const PUBLICATIONS = [
     id: 'transformer-geometry',
     title: 'Deep sequence models tend to memorize geometrically; it is unclear why.',
     short_title: 'Geometric Memory in Sequence Models',
-    venue: 'NeurIPS-FoRLM Workshop 2025',
-    venue_badge: 'Workshop',
-    year: 2025,
+    venue: 'The Forty-third International Conference on Machine Learning (ICML) 2026',
+    venue_badge: 'ICML',
+    extra_badges: ['NeurIPS-FoRLM'],
+    year: 2026,
     image: 'images/Overview_Geometric_Models_Path_Star.jpeg',
-    areas: ['Sequence Models', 'Representation Learning'],
+    areas: ['Deep Sequence Modeling', 'Representation Learning'],
     authors: 'S. Noroozizadeh, V. Nagarajan, E. Rosenfeld, S. Kumar',
     links: [
-      { label: 'Preprint', url: 'https://arxiv.org/abs/2510.26745' },
+      { label: 'Paper', url: 'https://arxiv.org/abs/2510.26745' },
       { label: 'Workshop', url: 'https://openreview.net/pdf?id=2NuCrYf8Ap' },
     ],
     abstract: `Deep sequence models are said to store atomic facts predominantly in the form of associative memory: a brute-force lookup of co-occurring entities. We identify a dramatically different form of storage of atomic facts that we term as geometric memory. Here, the model has synthesized embeddings encoding novel global relationships between all entities, including ones that do not co-occur in training. Such storage is powerful: for instance, we show how it transforms a hard reasoning task involving an ℓ-fold composition into an easy-to-learn 1-step navigation task.
@@ -54,7 +64,7 @@ Then, by analyzing a connection to Node2Vec, we demonstrate how the geometry ste
     venue_badge: 'ICLR',
     year: 2026,
     image: 'images/SurvHTE-Bench.png',
-    areas: ['Causal', 'Healthcare'],
+    areas: ['Causal Inference / Survival Analysis', 'Healthcare AI'],
     authors: 'S. Noroozizadeh *, X. Shen *, J. Weiss, G. Chen',
     links: [
       { label: 'Paper', url: 'https://openreview.net/pdf?id=qG6O3jMkCj' },
@@ -70,7 +80,7 @@ Then, by analyzing a connection to Node2Vec, we demonstrate how the geometry ste
     venue_badge: 'AAAI',
     year: 2026,
     image: 'images/TTS-Forecasts.png',
-    areas: ['Healthcare', 'Sequence Models'],
+    areas: ['Healthcare AI', 'Deep Sequence Modeling'],
     authors: 'S. Noroozizadeh *, S. Kumar *, J. Weiss',
     links: [
       { label: 'Paper', url: 'https://arxiv.org/abs/2504.10340' },
@@ -86,7 +96,7 @@ Then, by analyzing a connection to Node2Vec, we demonstrate how the geometry ste
     venue_badge: 'Preprint',
     year: 2026,
     image: 'images/Textual-Time-Series.png',
-    areas: ['Healthcare', 'Sequence Models'],
+    areas: ['Healthcare AI', 'Deep Sequence Modeling'],
     authors: 'S. Noroozizadeh *, S. Kumar *, G. Chen, J. Weiss',
     links: [
       { label: 'ArXiv (PMOA-TTS)', url: 'https://arxiv.org/abs/2505.20323' },
@@ -104,7 +114,7 @@ Then, by analyzing a connection to Node2Vec, we demonstrate how the geometry ste
     venue_badge: 'CHIL',
     year: 2025,
     image: 'images/Causal-Survival-Analysis-CHIL.png',
-    areas: ['Causal', 'Healthcare'],
+    areas: ['Causal Inference / Survival Analysis', 'Healthcare AI'],
     authors: 'S. Noroozizadeh, P. Welle, J. Weiss, G. Chen',
     links: [
       { label: 'Paper', url: 'https://proceedings.mlr.press/v287/noroozizadeh25a.html' },
@@ -120,7 +130,7 @@ Then, by analyzing a connection to Node2Vec, we demonstrate how the geometry ste
     venue_badge: 'NAR',
     year: 2025,
     image: 'images/mRNA-LM.png',
-    areas: ['Representation Learning', 'Healthcare'],
+    areas: ['Representation Learning', 'Healthcare AI', 'Neuro/Biomedical AI'],
     authors: 'S. Li, S. Noroozizadeh, S. Moayedpour, L. Kogler-Anele, Z. Xue, D. Zheng, F. Ulloa Montoya, V. Agarwal, Z. Bar-Joseph, S. Jager',
     links: [
       { label: 'Paper', url: 'https://academic.oup.com/nar/article/53/3/gkaf044/7997216' },
@@ -134,10 +144,10 @@ Then, by analyzing a connection to Node2Vec, we demonstrate how the geometry ste
     title: 'T5-generated clinical-Language summaries for DeBERTa Report Analysis (TLDR)',
     short_title: 'TLDR: Clinical NLI',
     venue: 'SemEval-2024 at NAACL',
-    venue_badge: 'NAACL',
+    venue_badge: 'NAACL-SemEval',
     year: 2024,
     image: 'images/TLDR-Model.jpg',
-    areas: ['Healthcare'],
+    areas: ['Healthcare AI'],
     authors: 'S. Das *, V. Samuel *, S. Noroozizadeh *',
     links: [
       { label: 'Paper', url: 'https://aclanthology.org/2024.semeval-1.79/' },
@@ -149,11 +159,12 @@ Then, by analyzing a connection to Node2Vec, we demonstrate how the geometry ste
     id: 'tscl',
     title: 'Temporal-Supervised Contrastive Learning: Modeling Patient Risk Progression',
     short_title: 'Temporal-Supervised Contrastive Learning',
-    venue: 'ML4H 2023 · AAAI R2HCAI Workshop',
+    venue: 'ML4H 2023 · AAAI R2HCAI Workshop 2023',
     venue_badge: 'ML4H',
+    extra_badges: ['AAAI-R2HCAI'],
     year: 2023,
     image: 'images/TSCL-MIMIC.jpg',
-    areas: ['Healthcare', 'Representation Learning'],
+    areas: ['Deep Sequence Modeling', 'Healthcare AI', 'Representation Learning'],
     authors: 'S. Noroozizadeh, J. Weiss, G. Chen',
     links: [
       { label: 'Paper (ML4H)', url: 'https://proceedings.mlr.press/v225/noroozizadeh23a.html' },
@@ -166,12 +177,12 @@ Then, by analyzing a connection to Node2Vec, we demonstrate how the geometry ste
     id: 'cmlh',
     title: 'Contrastive Learning Based Interpretable Hospital Discharge Delay Prediction',
     short_title: 'Hospital Discharge Delay Prediction',
-    venue: 'CMLH Fellowship',
-    venue_badge: 'Workshop',
+    venue: 'CMLH Fellowship 2022',
+    venue_badge: 'CMLH-Fellowship',
     year: 2022,
     image: 'images/CMLH.jpg',
-    areas: ['Healthcare'],
-    authors: 'S. Noroozizadeh et al.',
+    areas: ['Healthcare AI'],
+    authors: 'S. Noroozizadeh, L. Weiss, J. Weiss, G. Chen',
     links: [],
     abstract: `We addressed the significant challenge of delays in patient discharge across hospitals. Over an 11-month period, more than 63% of discharges at four UPMC hospitals were delayed, leading to costs of an estimated $6.6 million in the sampled hospital units. These delays adversely affect patient experience and health outcomes, exacerbated by issues like the lack of post-discharge patient transportation and ineffective capacity management in the health system. Throughout the CMLH fellowship, we aimed to mitigate these issues by developing a discharge delay prediction module. This initiative was divided into two phases: (1) Length of Stay Prediction: Various regression models were benchmarked using prehospital data. (2) Predictability Analysis: Building on initial insights, the prediction task was refined based on length of stay percentiles. A key innovation in this study was the application of a contrastive learning approach. This methodology significantly outperformed traditional models, including Random Forest, XGBoost, Support Vector Machines, Logistic Regression, and Fully-Connected Neural Networks.`,
   },
@@ -180,10 +191,10 @@ Then, by analyzing a connection to Node2Vec, we demonstrate how the geometry ste
     title: 'Pre-trained CLIP Encoder for Embodied Instruction Following in ALFRED',
     short_title: 'ET-CLIP: Embodied Instruction Following',
     venue: 'CVPR Embodied AI Workshop 2022',
-    venue_badge: 'Workshop',
+    venue_badge: 'CVPR-Embodied AI',
     year: 2022,
     image: 'images/et-clip.jpg',
-    areas: ['Representation Learning'],
+    areas: ['Representation Learning', 'Multimodal Machine Learning'],
     authors: 'Y.W. Byon *, C. Jiao *, S. Noroozizadeh *, J. Sun *, R. Vitiello *',
     links: [
       { label: 'Paper', url: 'https://embodied-ai.org/papers/2022/20.pdf' },
@@ -194,7 +205,7 @@ Then, by analyzing a connection to Node2Vec, we demonstrate how the geometry ste
     id: 'neuroinformatics',
     title: 'Automatic Brain Pathology Analysis for Traumatic Brain Injury',
     short_title: 'Brain Pathology Analysis: TBI',
-    venue: 'Neuroinformatics Journal 2019',
+    venue: 'Neuroinformatics 2019',
     venue_badge: 'Journal',
     year: 2019,
     image: 'images/neuroinformatics.jpg',
@@ -204,6 +215,49 @@ Then, by analyzing a connection to Node2Vec, we demonstrate how the geometry ste
       { label: 'Paper', url: 'https://link.springer.com/article/10.1007/s12021-018-9405-x' },
     ],
     abstract: `Traumatic brain injury (TBI) is one of the leading causes of death and disability worldwide. Detailed studies of the microglial response after TBI require high throughput quantification of changes in microglial count and morphology in histological sections throughout the brain. In this paper, we present a fully automated end-to-end system that is capable of assessing microglial activation in white matter regions on whole slide images of Iba1 stained sections. Our approach involves the division of the full brain slides into smaller image patches that are subsequently automatically classified into white and grey matter sections. On the patches classified as white matter, we jointly apply functional minimization methods and deep learning classification to identify Iba1-immunopositive microglia. Detected cells are then automatically traced to preserve their complex branching structure after which fractal analysis is applied to determine the activation states of the cells. The resulting system detects white matter regions with 84% accuracy, detects microglia with a performance level of 0.70 (F1 score) and performs binary microglia morphology classification with a 70% accuracy.`,
+  },
+  {
+    id: 't2s2',
+    title: 'Reconstructing Sepsis Trajectories from Clinical Case Reports using LLMs: the Textual Time Series Corpus for Sepsis',
+    short_title: 'T2S2: Sepsis Trajectory Reconstruction',
+    venue: 'Conference on Health, Inference, and Learning (CHIL) 2026',
+    venue_badge: 'CHIL',
+    year: 2026,
+    image: 'images/TTS-Forecasts.png',
+    areas: ['Deep Sequence Modeling', 'Healthcare AI'],
+    authors: 'S. Noroozizadeh, J. Weiss',
+    links: [
+      { label: 'Paper', url: 'https://arxiv.org/abs/2504.12326' },
+    ],
+    abstract: `Clinical case reports and discharge summaries may be the most complete and accurate summarization of patient encounters, yet they are finalized, i.e., timestamped after the encounter. Complementary structured data streams become available sooner but suffer from incompleteness. To train models and algorithms on more complete and temporally fine-grained data, we construct a pipeline to phenotype, extract, and annotate time-localized findings within case reports using large language models. We apply our pipeline to generate an open-access textual time series corpus for Sepsis-3 comprising 2,139 case reports from the PubMed-Open Access (PMOA) Subset. To validate our system, we apply it to PMOA and timeline annotations from i2b2/MIMIC-IV and compare the results to physician-expert annotations. We show high recovery rates of clinical findings (event match rates: GPT-5--0.93, Llama 3.3 70B Instruct--0.76) and strong temporal ordering (concordance: GPT-5--0.965, Llama 3.3 70B Instruct--0.908). Our work characterizes the ability of LLMs to time-localize clinical findings in text, illustrating the limitations of LLM use for temporal reconstruction and providing several potential avenues of improvement via multimodal integration.`,
+  },
+  {
+    id: 'tta',
+    title: 'Text Knows What, Tables Know When: Clinical Timeline Reconstruction via Retrieval-Augmented Multimodal Alignment',
+    short_title: 'TTA: Clinical Timeline Reconstruction',
+    venue: 'Preprint (ArXiv)',
+    venue_badge: 'Preprint',
+    year: 2026,
+    image: 'images/TTS-Forecasts.png',
+    areas: ['Deep Sequence Modeling', 'Healthcare AI', 'Multimodal Machine Learning'],
+    authors: 'S. Kumar, S. Noroozizadeh, J. Kim, J. Weiss',
+    links: [
+      { label: 'Paper', url: 'https://arxiv.org/abs/2605.15168' },
+    ],
+    abstract: `Reconstructing precise clinical timelines is essential for modeling patient trajectories and forecasting risk in complex, heterogeneous conditions like sepsis. While unstructured clinical narratives offer semantically rich and contextually complete descriptions of a patient's course, they often lack temporal precision and contain ambiguous event timing. Conversely, structured electronic health record (EHR) data provides precise temporal anchors but misses a substantial portion of clinically meaningful events. We introduce a retrieval-augmented multimodal alignment framework that bridges this gap to improve the temporal precision of absolute clinical timelines extracted from text. Our approach formulates timeline reconstruction as a graph-based multistep process: it first extracts central anchor events from narratives to build an initial temporal scaffold, places non-central events relative to this backbone, and then calibrates the timeline using retrieved structured EHR rows as external temporal evidence. Evaluated using instruction-tuned large language models on the i2m4 benchmark spanning MIMIC-III and MIMIC-IV, our multimodal pipeline consistently improves absolute timestamp accuracy (AULTC) and improves temporal concordance across nearly all evaluated models over unimodal text-only reconstruction, without compromising event match rates. Furthermore, our empirical gap analysis reveals that 34.8% of text-derived events are entirely absent from tabular records, demonstrating that aligning these modalities can produce a more temporally faithful and clinically informative reconstruction of patient trajectories than either source alone.`,
+  },
+  {
+    id: 'latent-objective',
+    title: 'Latent Objective Emergence under Social Incentives in Multi-Agent LLM Debate',
+    short_title: 'Latent Objective Emergence in LLM Debate',
+    venue: '[In-Preparation]',
+    venue_badge: 'Preprint',
+    year: 2026,
+    image: 'images/Overview_Geometric_Models_Path_Star.jpeg',
+    areas: ['Agentic'],
+    authors: 'A. Ghaffarizade *, A. Izadkhah *, D. Mohaddes *, S. Noroozizadeh *',
+    links: [],
+    abstract: `[In-Preparation]`,
   },
 ];
 
@@ -273,12 +327,12 @@ const TIMELINE = [
     id: 'microsoft',
     label: 'Microsoft',
     full_name: 'Microsoft',
-    role: 'Software Development Engineering Intern',
+    role: 'Software Engineering Intern',
     period: '2015',
-    location: 'Redmond, WA',
+    location: 'Vancouver, BC',
     logo: 'images/microsoft.jpg',
     type: 'industry',
-    details: `Software Development Engineering Intern [2015]: Main focus areas researched and worked on during this internship included: Windows 10 Universal Application Platform (UAP), Windows 10 NFL Application, Development of a Key Performance Indicator (KPI) System, Mocking Framework Development, Coded User Interface (UI) Automation and Build Machine Automation Development.`,
+    details: `Software Engineering Intern [2015]: Main focus areas researched and worked on during this internship included: Windows 10 Universal Application Platform (UAP), Windows 10 NFL Application, Development of a Key Performance Indicator (KPI) System, Mocking Framework Development, Coded User Interface (UI) Automation and Build Machine Automation Development.`,
   },
   {
     id: 'philips',
@@ -286,7 +340,7 @@ const TIMELINE = [
     full_name: 'Philips Healthcare Research',
     role: 'Research and Development Intern',
     period: '2016',
-    location: 'Vancouver, BC',
+    location: 'Eindhoven, the Netherlands',
     logo: 'images/philips.jpeg',
     type: 'industry',
     details: `Research and Development Intern [2016]: Developed an electronic nose sensor that is capable of selectively and sensitively detect biomarkers in exhaled breath to improve the emergency diagnosis of lung infections for patients with respiratory diseases including Acute Respiratory Distress Syndrome (ARDS). Designed a standalone signal processing algorithm and application tailored for gas chromatography data, which effectively isolated the presence of octane — a critical biomarker of ARDS in exhaled breath.`,
@@ -313,6 +367,17 @@ const TIMELINE = [
     type: 'industry',
     details: `A.I. PhD Student Researcher [2025]: Isolated a clean and analyzable instance of implicit in-weights reasoning in Transformers, demonstrating that their memory is better characterized by global geometric structure rather than purely local associative storage. Provided both empirical and theoretical evidence connecting this emergent geometric memory to spectral bias in Node2Vec-style dynamics. Investigating the sufficiency of next-token prediction (NTP) as a training paradigm for large language models. Hosted by Vaishnavh Nagarajan, collaborating with Elan Rosenfeld.`,
   },
+  {
+    id: 'microsoft-research',
+    label: 'MSR',
+    full_name: 'Microsoft Research',
+    role: 'Research Intern',
+    period: 'May 2026',
+    location: 'Redmond, WA',
+    logo: 'images/microsoft.jpg',
+    type: 'industry',
+    details: `Research Intern [2026]: Researching multimodal reasoning and AI triage systems for contextual healthcare decision-making using longitudinal and conversational patient signals.`,
+  },
 ];
 
 // ─── Globe pins ────────────────────────────────────────────────────
@@ -328,3 +393,14 @@ const GLOBE_PINS = [
 ];
 // Visitor pins are appended here at runtime:
 // GLOBE_PINS.push({ lat, lng, label: 'Visitor', type: 'visitor' });
+
+// ─── Conference pins (flag markers) ───────────────────────────────
+const CONFERENCE_PINS = [
+  { lat: -22.9068, lng: -43.1729,  label: 'Rio de Janeiro, Brazil', conference: 'ICLR 2026'           },
+  { lat:  1.3521,  lng: 103.8198,  label: 'Singapore',              conference: 'AAAI 2026'            },
+  { lat: 37.5665,  lng: 126.9780,  label: 'Seoul, South Korea',     conference: 'ICML 2026'            },
+  { lat: 29.9511,  lng: -90.0715,  label: 'New Orleans, LA',        conference: 'ML4H 2023 · NeurIPS 2023' },
+  { lat: 32.7157,  lng: -117.1611, label: 'San Diego, CA',          conference: 'ML4H 2025 · NeurIPS 2025' },
+  { lat: 37.8716,  lng: -122.2727, label: 'Berkeley, CA',           conference: 'CHIL 2025'            },
+  { lat: 47.6062,  lng: -122.3321, label: 'Seattle, WA',            conference: 'CHIL 2026'            },
+];

@@ -2,6 +2,7 @@
    carousel.js — Custom coverflow carousels for publications & projects.
    Data-pos attribute states drive CSS transforms (no Swiper).
    Auto-advance 4500ms, hover-pause, keyboard navigation.
+   Abstract panel appears below stage (not inside card).
    =================================================================== */
 
 (function () {
@@ -10,17 +11,26 @@
   // ── Helpers ───────────────────────────────────────────────────────
   function areaToKey(area) {
     const map = {
-      'Sequence Models':         'seq',
-      'Healthcare':              'health',
-      'Causal':                  'causal',
-      'Neuro/Biomedical AI':     'neuro',
-      'Representation Learning': 'repr',
+      'Deep Sequence Modeling':               'seq',
+      'Healthcare AI':                        'health',
+      'Causal Inference / Survival Analysis': 'causal',
+      'Neuro/Biomedical AI':                  'neuro',
+      'Representation Learning':              'repr',
+      'Multimodal Machine Learning':          'multi',
+      'Agentic':                              'agentic',
+      // legacy keys (fallback)
+      'Sequence Models':                      'seq',
+      'Healthcare':                           'health',
+      'Causal':                               'causal',
     };
     return map[area] || 'repr';
   }
 
-  function badgeClass(badge) {
-    return 'badge-' + badge.toLowerCase().replace(/[^a-z]/g, '');
+  function badgeTierClass(badge) {
+    if (typeof VENUE_BADGES === 'undefined') return 'badge-preprint';
+    const b = VENUE_BADGES[badge];
+    if (!b) return 'badge-preprint';
+    return `badge-${b.tier || 'preprint'}`;
   }
 
   function buildAreaTags(areas) {
@@ -29,8 +39,20 @@
     ).join('');
   }
 
+  function buildVenueBadges(badge, extraBadges) {
+    const all = [badge, ...(extraBadges || [])];
+    return all.map(b =>
+      `<span class="venue-badge ${badgeTierClass(b)}">${b}</span>`
+    ).join('');
+  }
+
+  // Link order: Abstract btn first, then Paper links, then Code/Data links
   function buildLinks(links) {
-    return (links || []).map(l =>
+    const paperKw  = /paper|preprint|arxiv|workshop|openreview/i;
+    const codeKw   = /code|data|github|huggingface|patent/i;
+    const paper = (links || []).filter(l => paperKw.test(l.label) || !codeKw.test(l.label));
+    const code  = (links || []).filter(l => codeKw.test(l.label));
+    return [...paper, ...code].map(l =>
       `<a href="${l.url}" target="_blank" rel="noopener" class="btn btn-sm" onclick="event.stopPropagation();">${l.label}</a>`
     ).join('');
   }
@@ -45,19 +67,20 @@
 
   // ── Coverflow factory ─────────────────────────────────────────────
   function createCoverflow(opts) {
-    // opts: { listId, prevId, nextId, dotsId, items, type }
-    const list    = document.getElementById(opts.listId);
-    const prevBtn = document.getElementById(opts.prevId);
-    const nextBtn = document.getElementById(opts.nextId);
-    const dotsWrap= document.getElementById(opts.dotsId);
+    const list      = document.getElementById(opts.listId);
+    const prevBtn   = document.getElementById(opts.prevId);
+    const nextBtn   = document.getElementById(opts.nextId);
+    const dotsWrap  = document.getElementById(opts.dotsId);
+    const absPanel  = document.getElementById(opts.absPanelId);
+    const absContent= document.getElementById(opts.absContentId);
     if (!list) return null;
 
     let items     = opts.items.slice();
     let activeIdx = 0;
     let autoTimer = null;
     let isHovered = false;
+    let absOpen   = false;
 
-    // ── Position label for item i given current activeIdx ──────────
     function getPos(i) {
       const total = items.length;
       const diff  = ((i - activeIdx) % total + total) % total;
@@ -69,24 +92,52 @@
       return 'hidden';
     }
 
-    // ── Update all data-pos attrs and dot states ───────────────────
     function updatePositions() {
       list.querySelectorAll('.cf-item').forEach((li, i) => {
         li.setAttribute('data-pos', getPos(i));
       });
 
+      // Sync dots — keep active dot centered if dots overflow
       if (dotsWrap) {
-        dotsWrap.querySelectorAll('.cf-dot').forEach((dot, i) => {
-          dot.classList.toggle('active', i === activeIdx);
-        });
+        const dots = dotsWrap.querySelectorAll('.cf-dot');
+        dots.forEach((dot, i) => dot.classList.toggle('active', i === activeIdx));
+        const activeDot = dots[activeIdx];
+        if (activeDot) {
+          const dw = dotsWrap.clientWidth;
+          const offset = activeDot.offsetLeft - dw / 2 + activeDot.clientWidth / 2;
+          dotsWrap.scrollLeft = offset;
+        }
       }
 
-      // Update --cf-glow from active pub's badge color
+      // Update --cf-glow
       if (opts.type === 'pub' && typeof VENUE_BADGES !== 'undefined') {
         const pub   = items[activeIdx];
         const color = (VENUE_BADGES[pub.venue_badge] || {}).color || '#3b82f6';
-        document.documentElement.style.setProperty('--cf-glow', hexToRgba(color, 0.14));
+        document.documentElement.style.setProperty('--cf-glow', hexToRgba(color, 0.15));
       }
+
+      // Close abstract panel on card change
+      if (absOpen) closeAbstractPanel();
+    }
+
+    function openAbstractPanel(item) {
+      if (!absPanel || !absContent) return;
+      absContent.innerHTML = `
+        <div class="cf-abs-venue">${item.venue || ''}</div>
+        <div class="cf-abs-title">${item.title}</div>
+        <div class="cf-abs-authors">${item.authors || ''}</div>
+        <div class="cf-abs-body">${(item.abstract || '').replace(/\n/g, '<br>')}</div>
+      `;
+      absPanel.classList.add('open');
+      absOpen = true;
+    }
+
+    function closeAbstractPanel() {
+      if (!absPanel) return;
+      absPanel.classList.remove('open');
+      absOpen = false;
+      // Reset all abs buttons
+      list.querySelectorAll('.abs-btn').forEach(btn => btn.textContent = 'Abstract');
     }
 
     function navigate(dir) {
@@ -114,17 +165,18 @@
           </div>
           <div class="cf-card-body">
             <div class="cf-card-badges">
-              <span class="venue-badge ${badgeClass(item.venue_badge)}">${item.venue_badge}</span>
+              ${buildVenueBadges(item.venue_badge, item.extra_badges)}
+            </div>
+            <div class="cf-card-area-tags">
               ${buildAreaTags(item.areas)}
             </div>
             <div class="cf-card-title">${item.title}</div>
             <div class="cf-card-authors">${item.authors}</div>
             <div class="cf-card-links">
+              <button class="btn btn-sm abs-btn" type="button" onclick="event.stopPropagation();">Abstract</button>
               ${buildLinks(item.links)}
-              <button class="btn btn-sm abs-btn" type="button" onclick="event.stopPropagation();">Abs</button>
             </div>
           </div>
-          <div class="cf-card-abstract">${item.abstract.replace(/\n/g, '<br>')}</div>
         </div>
       `;
     }
@@ -143,21 +195,20 @@
       `;
     }
 
-    // ── (Re)build DOM from items array ────────────────────────────
+    // ── (Re)build DOM ─────────────────────────────────────────────
     function build(newItems) {
       items     = newItems.slice();
       activeIdx = Math.max(0, Math.min(activeIdx, items.length - 1));
+      closeAbstractPanel();
 
-      list.innerHTML      = '';
+      list.innerHTML = '';
       if (dotsWrap) dotsWrap.innerHTML = '';
 
       items.forEach((item, i) => {
-        // List item
         const li = document.createElement('li');
         li.className = 'cf-item';
         li.innerHTML = opts.type === 'pub' ? buildPubCard(item) : buildProjCard(item);
 
-        // Click on non-active → navigate to it
         li.addEventListener('click', (e) => {
           const pos = li.getAttribute('data-pos');
           if (pos === 'prev' || pos === 'prev-2') {
@@ -166,7 +217,6 @@
           if (pos === 'next' || pos === 'next-2') {
             navigate(1);  stopAuto(); startAuto(); return;
           }
-          // Active card: open modal unless a button was clicked
           if (pos === 'active') {
             if (e.target.closest('.btn')) return;
             if (opts.type === 'pub'  && typeof openPubModal     === 'function') openPubModal(item);
@@ -174,20 +224,25 @@
           }
         });
 
-        // Abs button
+        // Abstract button
         const absBtn = li.querySelector('.abs-btn');
         if (absBtn) {
           absBtn.addEventListener('click', (e) => {
             e.stopPropagation();
-            const card = li.querySelector('.cf-card');
-            const open = card.classList.toggle('abs-open');
-            absBtn.textContent = open ? 'Close' : 'Abs';
+            if (absOpen && items[activeIdx].id === item.id) {
+              closeAbstractPanel();
+              absBtn.textContent = 'Abstract';
+            } else {
+              closeAbstractPanel();
+              list.querySelectorAll('.abs-btn').forEach(b => b.textContent = 'Abstract');
+              openAbstractPanel(item);
+              absBtn.textContent = 'Close';
+            }
           });
         }
 
         list.appendChild(li);
 
-        // Dot
         if (dotsWrap) {
           const dot = document.createElement('span');
           dot.className = 'cf-dot';
@@ -203,11 +258,9 @@
       updatePositions();
     }
 
-    // Prev / Next buttons
     if (prevBtn) prevBtn.addEventListener('click', () => { navigate(-1); stopAuto(); startAuto(); });
     if (nextBtn) nextBtn.addEventListener('click', () => { navigate(1);  stopAuto(); startAuto(); });
 
-    // Hover pause
     const wrap = list.closest('.carousel-wrap');
     if (wrap) {
       wrap.addEventListener('mouseenter', () => { isHovered = true; });
@@ -217,14 +270,21 @@
     return { build, navigate, startAuto, stopAuto };
   }
 
-  // ── Bookshelf (Research Explorer) ────────────────────────────────
+  // ── Bookshelf ─────────────────────────────────────────────────────
   let pubCf  = null;
   let projCf = null;
   let currentFilter = 'all';
 
   function filteredPubs(filter) {
-    if (filter === 'all') return PUBLICATIONS;
+    if (filter === 'all') return PUBLICATIONS.filter(p => p.venue_badge !== 'Preprint' || p.id === 'pmoa-tts');
+    if (filter === 'all-incl-preprint') return PUBLICATIONS;
     return PUBLICATIONS.filter(p => p.areas && p.areas.includes(filter));
+  }
+
+  // Bookshelf shows all (excluding "Agentic-only" working papers from carousel)
+  function bookshelfPubs(filter) {
+    if (filter === 'all') return PUBLICATIONS.filter(p => !p.areas || !p.areas.every(a => a === 'Agentic'));
+    return PUBLICATIONS.filter(p => p.areas && p.areas.includes(filter) && !p.areas.every(a => a === 'Agentic'));
   }
 
   function initBookshelf() {
@@ -234,31 +294,35 @@
         books.forEach(b => b.classList.remove('active'));
         book.classList.add('active');
         currentFilter = book.dataset.filter;
-        if (pubCf) pubCf.build(filteredPubs(currentFilter));
+        if (pubCf) pubCf.build(bookshelfPubs(currentFilter));
       });
     });
   }
 
-  // ── Count badges ──────────────────────────────────────────────────
+  // ── Counts ────────────────────────────────────────────────────────
   function updateCounts() {
     const counts = {
-      all: PUBLICATIONS.length,
-      'Sequence Models': 0,
-      'Healthcare': 0,
-      'Causal': 0,
+      all: 0,
+      'Deep Sequence Modeling': 0,
+      'Healthcare AI': 0,
+      'Causal Inference / Survival Analysis': 0,
       'Neuro/Biomedical AI': 0,
       'Representation Learning': 0,
+      'Multimodal Machine Learning': 0,
     };
     PUBLICATIONS.forEach(p => {
+      if (p.areas && p.areas.every(a => a === 'Agentic')) return; // skip agentic-only
+      counts.all++;
       (p.areas || []).forEach(a => { if (a in counts) counts[a]++; });
     });
     const map = {
-      all:                       'count-all',
-      'Sequence Models':         'count-seq',
-      'Healthcare':              'count-health',
-      'Causal':                  'count-causal',
-      'Neuro/Biomedical AI':     'count-neuro',
-      'Representation Learning': 'count-repr',
+      all:                                       'count-all',
+      'Deep Sequence Modeling':                  'count-seq',
+      'Healthcare AI':                           'count-health',
+      'Causal Inference / Survival Analysis':    'count-causal',
+      'Neuro/Biomedical AI':                     'count-neuro',
+      'Representation Learning':                 'count-repr',
+      'Multimodal Machine Learning':             'count-multi',
     };
     Object.entries(map).forEach(([key, id]) => {
       const el = document.getElementById(id);
@@ -271,26 +335,22 @@
     const pubBtn = document.getElementById('pub-view-all');
     if (pubBtn) {
       pubBtn.addEventListener('click', () => {
-        const filtered = filteredPubs(currentFilter);
-        const label    = currentFilter === 'all'
-          ? 'All Publications'
-          : `${currentFilter} — Publications`;
-        if (typeof openExpandOverlay === 'function') openExpandOverlay(filtered, label, 'pub');
+        const filtered = bookshelfPubs(currentFilter);
+        if (typeof openExpandOverlay === 'function') openExpandOverlay(filtered, 'Recent Research &amp; Publications', 'pub');
       });
     }
-
     const projBtn = document.getElementById('proj-view-all');
     if (projBtn) {
       projBtn.addEventListener('click', () => {
-        if (typeof openExpandOverlay === 'function') openExpandOverlay(PROJECTS, 'All Projects', 'proj');
+        if (typeof openExpandOverlay === 'function') openExpandOverlay(PROJECTS, 'Past Research &amp; Project Experiences', 'proj');
       });
     }
   }
 
-  // ── Keyboard navigation ───────────────────────────────────────────
+  // ── Keyboard ──────────────────────────────────────────────────────
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft')  { if (pubCf)  pubCf.navigate(-1);  }
-    if (e.key === 'ArrowRight') { if (pubCf)  pubCf.navigate(1);   }
+    if (e.key === 'ArrowLeft')  { if (pubCf)  pubCf.navigate(-1); }
+    if (e.key === 'ArrowRight') { if (pubCf)  pubCf.navigate(1);  }
   });
 
   // ── Init ──────────────────────────────────────────────────────────
@@ -303,22 +363,26 @@
     updateCounts();
 
     pubCf = createCoverflow({
-      listId: 'pub-cf',
-      prevId: 'pub-prev',
-      nextId: 'pub-next',
-      dotsId: 'pub-dots',
-      items:  PUBLICATIONS,
-      type:   'pub',
+      listId:      'pub-cf',
+      prevId:      'pub-prev',
+      nextId:      'pub-next',
+      dotsId:      'pub-dots',
+      absPanelId:  'pub-abstract-panel',
+      absContentId:'pub-abstract-content',
+      items:       PUBLICATIONS.filter(p => !p.areas || !p.areas.every(a => a === 'Agentic')),
+      type:        'pub',
     });
-    if (pubCf) { pubCf.build(PUBLICATIONS); pubCf.startAuto(); }
+    if (pubCf) { pubCf.build(PUBLICATIONS.filter(p => !p.areas || !p.areas.every(a => a === 'Agentic'))); pubCf.startAuto(); }
 
     projCf = createCoverflow({
-      listId: 'proj-cf',
-      prevId: 'proj-prev',
-      nextId: 'proj-next',
-      dotsId: 'proj-dots',
-      items:  PROJECTS,
-      type:   'proj',
+      listId:      'proj-cf',
+      prevId:      'proj-prev',
+      nextId:      'proj-next',
+      dotsId:      'proj-dots',
+      absPanelId:  null,
+      absContentId:null,
+      items:       PROJECTS,
+      type:        'proj',
     });
     if (projCf) { projCf.build(PROJECTS); projCf.startAuto(); }
 

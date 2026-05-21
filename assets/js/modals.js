@@ -49,17 +49,29 @@
 
   function areaToKey(area) {
     const map = {
-      'Sequence Models':        'seq',
-      'Healthcare':             'health',
-      'Causal':                 'causal',
-      'Neuro/Biomedical AI':    'neuro',
-      'Representation Learning':'repr',
+      'Deep Sequence Modeling':               'seq',
+      'Healthcare AI':                        'health',
+      'Causal Inference / Survival Analysis': 'causal',
+      'Neuro/Biomedical AI':                  'neuro',
+      'Representation Learning':              'repr',
+      'Multimodal Machine Learning':          'multi',
+      'Agentic':                              'agentic',
+      'Sequence Models':                      'seq',
+      'Healthcare':                           'health',
+      'Causal':                               'causal',
     };
     return map[area] || 'repr';
   }
 
+  function badgeTierClass(badge) {
+    if (typeof VENUE_BADGES === 'undefined') return 'badge-preprint';
+    const b = VENUE_BADGES[badge];
+    if (!b) return 'badge-preprint';
+    return `badge-${b.tier || 'preprint'}`;
+  }
+
   function venueBadgeHTML(badge, venue) {
-    return `<span class="venue-badge badge-${badge.toLowerCase()}">${venue}</span>`;
+    return `<span class="venue-badge ${badgeTierClass(badge)}">${venue}</span>`;
   }
 
   function linksHTML(links) {
