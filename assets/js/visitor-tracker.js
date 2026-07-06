@@ -115,11 +115,18 @@
     if (elC) elC.textContent = allCountries.size;
   }
 
+  function buildCityLabel(c) {
+    const parts = [c.city];
+    if (c.region && c.region !== c.city && c.region !== c.country) parts.push(c.region);
+    if (c.country) parts.push(c.country);
+    return parts.join(', ');
+  }
+
   function addPinsToGlobe(cities) {
     if (typeof window.addVisitorPin !== 'function') return;
     cities.forEach(c => {
       if (!isMockCity(c.city, c.country_code)) {
-        window.addVisitorPin(c.lat, c.lng, c.city);
+        window.addVisitorPin(c.lat, c.lng, buildCityLabel(c));
       }
     });
   }
@@ -130,14 +137,14 @@
     {
       url:   'https://ipwho.is/',
       parse: d => (d.success && d.city)
-        ? { city: d.city, country: d.country, country_code: d.country_code,
-            lat: d.latitude, lng: d.longitude }
+        ? { city: d.city, region: d.region || '', country: d.country,
+            country_code: d.country_code, lat: d.latitude, lng: d.longitude }
         : null,
     },
     {
       url:   'https://ipapi.co/json/',
       parse: d => (d.city && !d.error)
-        ? { city: d.city, country: d.country_name || d.country,
+        ? { city: d.city, region: d.region || '', country: d.country_name || d.country,
             country_code: d.country, lat: d.latitude, lng: d.longitude }
         : null,
     },
@@ -201,6 +208,7 @@
     const visitData = { timestamp: FV.serverTimestamp() };
     if (hasLocation) {
       visitData.city         = geo.city;
+      visitData.region       = geo.region       || '';
       visitData.country      = geo.country;
       visitData.country_code = geo.country_code;
       visitData.lat          = geo.lat;
@@ -217,6 +225,7 @@
       } else {
         batch.set(cityRef, {
           city:         geo.city,
+          region:       geo.region       || '',
           country:      geo.country,
           country_code: geo.country_code,
           lat:          geo.lat,

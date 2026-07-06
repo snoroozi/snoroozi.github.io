@@ -11,7 +11,7 @@
 
   const PIN_COLORS = {
     visited:    '#fff200',
-    visitor:    '#a78bfa',
+    visitor:    '#fff200',
     conference: '#ff1744',
   };
 
