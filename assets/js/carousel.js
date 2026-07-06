@@ -17,7 +17,7 @@
       'Neuro / Biomedical AI':               'neuro',
       'Representation Learning':             'repr',
       'Multimodal Machine Learning':         'multi',
-      'Agentic':                             'agentic',
+      'Agentic AI':                          'agentic',
       'Robotics':                            'robotics',
       'NLP':                                 'nlp',
       'Machine Learning':                    'ml',
@@ -355,6 +355,7 @@
       'Neuro / Biomedical AI': 0,
       'Representation Learning': 0,
       'Multimodal Machine Learning': 0,
+      'Agentic AI': 0,
     };
     PUBLICATIONS.forEach(p => {
       (p.areas || []).forEach(a => { if (a in counts) counts[a]++; });
@@ -367,6 +368,7 @@
       'Neuro / Biomedical AI':               'count-neuro',
       'Representation Learning':             'count-repr',
       'Multimodal Machine Learning':         'count-multi',
+      'Agentic AI':                          'count-agentic',
     };
     Object.entries(map).forEach(([key, id]) => {
       const el = document.getElementById(id);

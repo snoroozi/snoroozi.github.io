@@ -37,7 +37,7 @@
       'Neuro / Biomedical AI':               'neuro',
       'Representation Learning':             'repr',
       'Multimodal Machine Learning':         'multi',
-      'Agentic':                             'agentic',
+      'Agentic AI':                          'agentic',
       'Robotics':                            'robotics',
       'NLP':                                 'nlp',
       'Machine Learning':                    'ml',

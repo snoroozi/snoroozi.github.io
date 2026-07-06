@@ -338,6 +338,7 @@ img { max-width: 100%; display: block; }
 .chip-neuro  { color: var(--tag-neuro); border-color: var(--tag-neuro); background: rgba(139,92,246,0.08); }
 .chip-repr   { color: var(--tag-repr);  border-color: var(--tag-repr);  background: rgba(14,165,233,0.08); }
 .chip-multi  { color: var(--tag-multi); border-color: var(--tag-multi); background: rgba(236,72,153,0.08); }
+.chip-agentic { color: var(--tag-agentic); border-color: var(--tag-agentic); background: rgba(148,163,184,0.08); }
 
 /* Sidebar social links */
 .sidebar-social {
@@ -584,6 +585,7 @@ img { max-width: 100%; display: block; }
 .book-neuro  { --book-color: #4c1d95; --book-glow: rgba(139,92,246,0.42); }
 .book-repr   { --book-color: #0c4a6e; --book-glow: rgba(14,165,233,0.42); }
 .book-multi  { --book-color: #831843; --book-glow: rgba(236,72,153,0.42); }
+.book-agentic { --book-color: #334155; --book-glow: rgba(148,163,184,0.42); }
 
 .book-spine-text {
   font-size: 0.71rem;

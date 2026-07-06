@@ -9,6 +9,14 @@
   // ── Tab switching (Publications section) ─────────────────────────
   function initTabs() {
     const tabBtns = document.querySelectorAll('.tab-btn');
+
+    // Keep empty categories out of the tab bar. The button will appear
+    // automatically once its corresponding panel contains a paper.
+    tabBtns.forEach(btn => {
+      const panel = document.getElementById(btn.dataset.tab);
+      btn.hidden = !panel || !panel.querySelector('.pub-list-entry');
+    });
+
     tabBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         const target = btn.dataset.tab;

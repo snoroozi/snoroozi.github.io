@@ -10,7 +10,7 @@ const AREA_TAGS = {
   'Neuro / Biomedical AI':           { color: '#8b5cf6', abbr: 'Neuro'   },
   'Representation Learning':         { color: '#0ea5e9', abbr: 'Repr'    },
   'Multimodal Machine Learning':     { color: '#ec4899', abbr: 'Multi'   },
-  'Agentic':                         { color: '#64748b', abbr: 'Agent'   },
+  'Agentic AI':                      { color: '#64748b', abbr: 'Agent'   },
   'Robotics':                        { color: '#14b8a6', abbr: 'Robot'   },
   'NLP':                             { color: '#64748b', abbr: 'NLP'     },
   'Machine Learning':                { color: '#94a3b8', abbr: 'ML'      },
@@ -65,6 +65,22 @@ From this phenomenon, we extract fundamental aspects of neural embedding geometr
 Then, by analyzing a connection to Node2Vec, we demonstrate how the geometry stems from a spectral bias that — in contrast to prevailing theories — indeed arises naturally despite the lack of various pressures. This analysis also points out to practitioners a visible headroom to make Transformer memory more strongly geometric. We hope the geometric view of parametric memory encourages revisiting the default intuitions that guide researchers in areas like knowledge acquisition, capacity, discovery, and unlearning.`,
   },
   {
+    id: 'llm-agora',
+    title: 'What LLM Agents Say When No One Is Watching: Social Structure and Latent Objective Emergence in Multi-Agent Debates',
+    short_title: 'What LLM Agents Say When No One Is Watching',
+    venue: 'Preprint (ArXiv)',
+    venue_badge: 'Preprint',
+    year: 2026,
+    image: 'images/LLMAgora.jpeg',
+    areas: ['Agentic AI'],
+    authors: 'A. Ghaffarizadeh*, D. Mohaddes*, A. Izadkhah<sup>*</sup>, S. Noroozizadeh<sup>*</sup>',
+    links: [
+      { label: 'ArXiv', url: 'https://arxiv.org/abs/2607.02507' },
+      { label: 'Code', url: 'https://github.com/danmohad/LLMAgora' },
+    ],
+    abstract: `LLM agents will increasingly act in socially structured settings where role, audience, and relational context can shape what is advantageous or costly to say. We study whether such social structure, without any explicit objective in the prompt, changes what an agent expresses publicly relative to an off-the-record (OTR) channel elicited under the same condition. We introduce a dual-channel debate framework in which agents produce public utterances that enter the shared history alongside OTR responses that are recorded but never shown to the other participant. Across 10 models, 3 scenarios, and 5 variations within each scenario, alignment-inducing settings produce systematic public-OTR divergence in the targeted agent, with its decision divergence rising from a ∼3% baseline to roughly 40%. The effect is consistent across four aggregate analyses: stance, semantic similarity, natural language inference, and survey responses. In some cases, the OTR response explicitly attributes public accommodation to relational pressures, such as career risk or sponsorship obligation. The findings suggest that agent evaluation should extend beyond explicit goals and detect emergent objectives. We present a dual-channel evaluation framework and complementary behavioral measures that operationalize this assessment.`,
+  },
+  {
     id: 't2s2',
     title: 'Reconstructing Sepsis Trajectories from Clinical Case Reports using LLMs: the Textual Time Series Corpus for Sepsis (T2S2)',
     short_title: 'T2S2: Sepsis Trajectory Reconstruction',
@@ -88,7 +104,7 @@ Then, by analyzing a connection to Node2Vec, we demonstrate how the geometry ste
     venue_badge: 'Preprint',
     year: 2026,
     image: 'images/TTA-Overview-Figures.png',
-    areas: ['Deep Sequence Modeling', 'Healthcare AI', 'Multimodal Machine Learning'],
+    areas: ['Deep Sequence Modeling', 'Healthcare AI', 'Multimodal Machine Learning', 'Agentic AI'],
     authors: 'S. Kumar *, S. Noroozizadeh *, J. Kim *, J. Weiss',
     links: [
       { label: 'ArXiv', url: 'https://arxiv.org/abs/2605.15168' },
@@ -387,7 +403,7 @@ const TIMELINE = [
     location: 'Redmond, WA, USA',
     logo: 'images/msr.jpeg',
     type: 'industry',
-    details: `AI Research Intern [2026]: Researching multimodal reasoning and AI triage systems for contextual healthcare decision-making using longitudinal and conversational patient signals.`,
+    details: `AI Research Intern [2026]: Researching multimodal reasoning and AI triage systems for contextual healthcare decision-making using longitudinal and conversational patient signals and developing a framework for action sufficiency under partial evidence.`,
   },
 ];
 
